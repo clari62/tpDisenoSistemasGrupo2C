@@ -22,12 +22,15 @@ public class framePrincipal {
 
 			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			ventana.setBackground(Color.WHITE);
-
-			panelAgregarPasajero = new PanelAgregarPasajero();
-			GridBagLayout gridBagLayout = (GridBagLayout) panelAgregarPasajero.getLayout();
-			gridBagLayout.columnWeights = new double[] { 1.0 };
 			
-			ventana.setContentPane(panelAgregarPasajero);
+			PanelPrincipal panelPrincipal = new PanelPrincipal();
+			ventana.setContentPane(panelPrincipal);
+
+			//panelAgregarPasajero = new PanelAgregarPasajero();
+			//GridBagLayout gridBagLayout = (GridBagLayout) panelAgregarPasajero.getLayout();
+			//gridBagLayout.columnWeights = new double[] { 1.0 };
+			
+			//ventana.setContentPane(panelAgregarPasajero);
 			ventana.pack();
 			ventana.setLocationRelativeTo(null);
 			ventana.setVisible(true);
