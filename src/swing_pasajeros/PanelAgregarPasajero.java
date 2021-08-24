@@ -10,7 +10,10 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import javax.swing.JTextField;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
@@ -85,8 +88,6 @@ public PanelAgregarPasajero() {
 	gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
 			0.0, 0.0 };
 	setLayout(gridBagLayout);
-	setSize(new Dimension(503, 555));
-	setMinimumSize(new Dimension(300, 300));
 
 	JLabel apellido = new JLabel("Apellido(*): ");
 	apellido.setFont(new Font("Arial", Font.BOLD, 14));
@@ -617,10 +618,19 @@ public PanelAgregarPasajero() {
 	gbc_btnNewButton_1.gridy = 15;
 	add(botonCancelar, gbc_btnNewButton_1);
 	
+	List<JLabel> labels = new ArrayList<JLabel>();
+	labels.add(co1);labels.add(co2);labels.add(co3);labels.add(co4);labels.add(co5);
+	labels.add(co6);labels.add(co8);labels.add(co9);labels.add(co10);labels.add(co11);
+	labels.add(co12);labels.add(co13);labels.add(co14);labels.add(co15);labels.add(co16);
+
+	
+	this.limpiarWarnings(labels);
 }
 
-	public void limpiarWarnings(JLabel labelAQuitar) {
-		labelAQuitar.setVisible(false);
+	public void limpiarWarnings(List<JLabel> labelAQuitar) {
+		for(int i =0;i<labelAQuitar.size();i++) {
+		labelAQuitar.get(i).setVisible(false);
+		}
 	}
 	
 }
