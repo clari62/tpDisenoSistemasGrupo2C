@@ -23,40 +23,40 @@ import javax.swing.border.LineBorder;
 
 public class PanelAgregarPasajero extends JPanel {
 	
-private JTextField textField_1;
+private JTextField textApellido;
 private JButton botonSiguiente;
 private JButton botonCancelar;
 private JLabel co1;
 private JLabel co3;
 private JLabel co5;
-private JTextField textField;
-private JTextField textField_2;
+private JTextField textNroDNI;
+private JTextField textNombre;
 private JLabel cuit;
-private JTextField textField_3;
+private JTextField textCUIT;
 private JLabel posicionIVA;
 private JLabel co8;
 private JLabel nacimiento;
-private JTextField textField_4;
+private JTextField textFechaNacimiento;
 private JLabel co2;
 private JLabel telefono;
 private JLabel co4;
 private JTextField textField_5;
-private JTextField textField_6;
+private JTextField textTelefono;
 private JLabel mail;
 private JLabel co6;
-private JTextField textField_7;
+private JTextField textEmail;
 private JLabel ocupacion;
 private JLabel co9;
-private JTextField textField_8;
+private JTextField textOcupacion;
 private JLabel nacionalidad;
 private JLabel co10;
 private JComboBox comboNacionalidad;
 private JPanel panel;
 private JLabel calle;
-private JTextField textField_9;
+private JTextField textCalle;
 private JLabel co11;
 private JLabel depto;
-private JTextField textField_10;
+private JTextField textDepto;
 private JLabel pais;
 private JLabel co13;
 private JComboBox comboPais;
@@ -66,12 +66,12 @@ private JComboBox comboLocalidad;
 private JLabel provincia;
 private JComboBox comboProvincia;
 private JLabel codPostal;
-private JTextField textField_11;
+private JTextField textCodigoPostal;
 private JLabel co14;
 private JLabel co16;
 private JLabel nroCalle;
 private JLabel co12;
-private JTextField textField_12;
+private JTextField textNroCalle;
 private JComboBox comboTipoDNI;
 private JComboBox comboPosicionIVA;
 
@@ -97,15 +97,15 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_2.gridy = 2;
 	add(apellido, gbc_lblNewLabel_2);
 
-	textField_1 = new JTextField();
+	textApellido = new JTextField();
 	GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 	gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_1.insets = new Insets(0, 0, 5, 5);
 	gbc_textField_1.gridwidth = 2;
 	gbc_textField_1.gridx = 2;
 	gbc_textField_1.gridy = 2;
-	add(textField_1, gbc_textField_1);
-	textField_1.setColumns(10);
+	add(textApellido, gbc_textField_1);
+	textApellido.setColumns(10);
 
 	co1 = new JLabel("Campo obligatorio.");
 	co1.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
@@ -127,14 +127,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_13.gridy = 2;
 	add(nacimiento, gbc_lblNewLabel_13);
 	
-	textField_4 = new JTextField();
-	textField_4.setColumns(10);
+	textFechaNacimiento = new JTextField();
+	textFechaNacimiento.setColumns(10);
 	GridBagConstraints gbc_textField_4 = new GridBagConstraints();
 	gbc_textField_4.insets = new Insets(0, 0, 5, 0);
 	gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_4.gridx = 6;
 	gbc_textField_4.gridy = 2;
-	add(textField_4, gbc_textField_4);
+	add(textFechaNacimiento, gbc_textField_4);
 
 	add(co1, gbc_lblNewLabel_1);
 	
@@ -157,15 +157,15 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_3.gridy = 4;
 	add(nombre, gbc_lblNewLabel_3);
 	
-	textField_2 = new JTextField();
-	textField_2.setColumns(10);
+	textNombre = new JTextField();
+	textNombre.setColumns(10);
 	GridBagConstraints gbc_textField_2 = new GridBagConstraints();
 	gbc_textField_2.gridwidth = 2;
 	gbc_textField_2.insets = new Insets(0, 0, 5, 5);
 	gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_2.gridx = 2;
 	gbc_textField_2.gridy = 4;
-	add(textField_2, gbc_textField_2);
+	add(textNombre, gbc_textField_2);
 	
 	telefono = new JLabel("Tel\u00E9fono(*):");
 	telefono.setFont(new Font("Arial", Font.BOLD, 14));
@@ -185,14 +185,14 @@ public PanelAgregarPasajero() {
 	gbc_textField_5.gridy = 4;
 	add(textField_5, gbc_textField_5);
 	
-	textField_6 = new JTextField();
-	textField_6.setColumns(10);
+	textTelefono = new JTextField();
+	textTelefono.setColumns(10);
 	GridBagConstraints gbc_textField_6 = new GridBagConstraints();
 	gbc_textField_6.insets = new Insets(0, 0, 5, 0);
 	gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_6.gridx = 6;
 	gbc_textField_6.gridy = 4;
-	add(textField_6, gbc_textField_6);
+	add(textTelefono, gbc_textField_6);
 
 	co3 = new JLabel("Campo obligatorio.");
 	co3.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
@@ -244,14 +244,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_11.gridy = 6;
 	add(mail, gbc_lblNewLabel_11);
 	
-	textField_7 = new JTextField();
-	textField_7.setColumns(10);
+	textEmail = new JTextField();
+	textEmail.setColumns(10);
 	GridBagConstraints gbc_textField_7 = new GridBagConstraints();
 	gbc_textField_7.insets = new Insets(0, 0, 5, 0);
 	gbc_textField_7.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_7.gridx = 6;
 	gbc_textField_7.gridy = 6;
-	add(textField_7, gbc_textField_7);
+	add(textEmail, gbc_textField_7);
 
 	co5 = new JLabel("Campo obligatorio.");
 	co5.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
@@ -284,15 +284,15 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_5.gridy = 8;
 	add(numeroDni, gbc_lblNewLabel_5);
 	
-	textField = new JTextField();
-	textField.setColumns(10);
+	textNroDNI = new JTextField();
+	textNroDNI.setColumns(10);
 	GridBagConstraints gbc_textField = new GridBagConstraints();
 	gbc_textField.gridwidth = 2;
 	gbc_textField.insets = new Insets(0, 0, 5, 5);
 	gbc_textField.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField.gridx = 2;
 	gbc_textField.gridy = 8;
-	add(textField, gbc_textField);
+	add(textNroDNI, gbc_textField);
 
 		
 	ocupacion = new JLabel("Ocupaci\u00F3n(*):");
@@ -304,14 +304,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_15.gridy = 8;
 	add(ocupacion, gbc_lblNewLabel_15);
 		
-	textField_8 = new JTextField();
-	textField_8.setColumns(10);
+	textOcupacion = new JTextField();
+	textOcupacion.setColumns(10);
 	GridBagConstraints gbc_textField_8 = new GridBagConstraints();
 	gbc_textField_8.insets = new Insets(0, 0, 5, 0);
 	gbc_textField_8.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_8.gridx = 6;
 	gbc_textField_8.gridy = 8;
-	add(textField_8, gbc_textField_8);
+	add(textOcupacion, gbc_textField_8);
 	
 	co8 = new JLabel("Campo obligatorio.");
 	co8.setForeground(Color.RED);
@@ -342,15 +342,15 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel.gridy = 10;
 	add(cuit, gbc_lblNewLabel);
 	
-	textField_3 = new JTextField();
-	textField_3.setColumns(10);
+	textCUIT = new JTextField();
+	textCUIT.setColumns(10);
 	GridBagConstraints gbc_textField_3 = new GridBagConstraints();
 	gbc_textField_3.gridwidth = 2;
 	gbc_textField_3.insets = new Insets(0, 0, 5, 5);
 	gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_3.gridx = 2;
 	gbc_textField_3.gridy = 10;
-	add(textField_3, gbc_textField_3);
+	add(textCUIT, gbc_textField_3);
 		
 	nacionalidad = new JLabel("Nacionalidad(*):");
 	nacionalidad.setFont(new Font("Arial", Font.BOLD, 14));
@@ -425,14 +425,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_19.gridy = 0;
 	panel.add(calle, gbc_lblNewLabel_19);
 	
-	textField_9 = new JTextField();
-	textField_9.setColumns(10);
+	textCalle = new JTextField();
+	textCalle.setColumns(10);
 	GridBagConstraints gbc_textField_9 = new GridBagConstraints();
 	gbc_textField_9.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_9.insets = new Insets(0, 0, 5, 5);
 	gbc_textField_9.gridx = 2;
 	gbc_textField_9.gridy = 0;
-	panel.add(textField_9, gbc_textField_9);
+	panel.add(textCalle, gbc_textField_9);
 		
 	nroCalle = new JLabel("N\u00FAmero(*):");
 	nroCalle.setFont(new Font("Arial", Font.BOLD, 14));
@@ -443,14 +443,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_30.gridy = 0;
 	panel.add(nroCalle, gbc_lblNewLabel_30);
 	
-	textField_12 = new JTextField();
-	textField_12.setColumns(10);
+	textNroCalle = new JTextField();
+	textNroCalle.setColumns(10);
 	GridBagConstraints gbc_textField_12 = new GridBagConstraints();
 	gbc_textField_12.insets = new Insets(0, 0, 5, 0);
 	gbc_textField_12.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_12.gridx = 4;
 	gbc_textField_12.gridy = 0;
-	panel.add(textField_12, gbc_textField_12);
+	panel.add(textNroCalle, gbc_textField_12);
 	
 	co11 = new JLabel("Campo obligatorio.");
 	co11.setForeground(Color.RED);
@@ -481,14 +481,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_21.gridy = 2;
 	panel.add(depto, gbc_lblNewLabel_21);
 	
-	textField_10 = new JTextField();
-	textField_10.setColumns(10);
+	textDepto = new JTextField();
+	textDepto.setColumns(10);
 	GridBagConstraints gbc_textField_10 = new GridBagConstraints();
 	gbc_textField_10.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_10.insets = new Insets(0, 0, 5, 5);
 	gbc_textField_10.gridx = 2;
 	gbc_textField_10.gridy = 2;
-	panel.add(textField_10, gbc_textField_10);
+	panel.add(textDepto, gbc_textField_10);
 	
 	pais = new JLabel("Pa\u00EDs(*):");
 	pais.setFont(new Font("Arial", Font.BOLD, 14));
@@ -569,14 +569,14 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_27.gridy = 5;
 	panel.add(codPostal, gbc_lblNewLabel_27);
 	
-	textField_11 = new JTextField();
-	textField_11.setColumns(10);
+	textCodigoPostal = new JTextField();
+	textCodigoPostal.setColumns(10);
 	GridBagConstraints gbc_textField_11 = new GridBagConstraints();
 	gbc_textField_11.insets = new Insets(0, 0, 5, 0);
 	gbc_textField_11.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_11.gridx = 4;
 	gbc_textField_11.gridy = 5;
-	panel.add(textField_11, gbc_textField_11);
+	panel.add(textCodigoPostal, gbc_textField_11);
 	
 	co15 = new JLabel("Campo obligatorio.");
 	co15.setForeground(Color.RED);
@@ -616,13 +616,11 @@ public PanelAgregarPasajero() {
 	gbc_btnNewButton_1.gridx = 4;
 	gbc_btnNewButton_1.gridy = 15;
 	add(botonCancelar, gbc_btnNewButton_1);
+	
 }
 
-	public void limpiarWarnings() {
-	
+	public void limpiarWarnings(JLabel labelAQuitar) {
+		labelAQuitar.setVisible(false);
 	}
 	
-	public void habilitarBotones() {
-		botonSiguiente.setEnabled(true);
-	}
 }
