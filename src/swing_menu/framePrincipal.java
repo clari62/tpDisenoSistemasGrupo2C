@@ -20,7 +20,7 @@ public class framePrincipal {
 			ventana.setTitle("MENU PRINCIPAL");
 			ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-			ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			ventana.setBackground(Color.WHITE);
 
 			panelAgregarPasajero = new PanelAgregarPasajero();
@@ -28,7 +28,7 @@ public class framePrincipal {
 			gridBagLayout.columnWeights = new double[] { 1.0 };
 			
 			ventana.setContentPane(panelAgregarPasajero);
-			//ventana.pack();
+			ventana.pack();
 			ventana.setLocationRelativeTo(null);
 			ventana.setVisible(true);
 
