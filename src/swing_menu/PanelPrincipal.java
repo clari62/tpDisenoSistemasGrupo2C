@@ -20,26 +20,25 @@ public class PanelPrincipal extends JPanel{
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		GridBagConstraints gbc= new GridBagConstraints();
 		setLayout(gridBagLayout);
 		
-		JLabel lblNewLabel = new JLabel("MENÚ PRINCIPAL");
-		lblNewLabel.setFont(new Font("Leelawadee UI", Font.BOLD, 23));
-		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
-		gbc_lblNewLabel.insets = new Insets(5, 10, 5, 10);
-		gbc_lblNewLabel.gridx = 3;
-		gbc_lblNewLabel.gridy = 1;
-		add(lblNewLabel, gbc_lblNewLabel);
+		JLabel lblMenuPrincipal = new JLabel("MENÚ PRINCIPAL");
+		lblMenuPrincipal.setFont(new Font("Leelawadee UI", Font.BOLD, 23));
+		GridBagConstraints gbc_lblMenu = new GridBagConstraints();
+		gbc_lblMenu.insets = new Insets(5, 10, 5, 10);
+		gbc_lblMenu.gridx = 3;
+		gbc_lblMenu.gridy = 1;
+		add(lblMenuPrincipal, gbc_lblMenu);
 		
-		JButton btnNewButton = new JButton("GESTIONAR PASAJERO");
-		btnNewButton.setBackground(new Color(204, 255, 255));
-		btnNewButton.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-		gbc_btnNewButton.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton.gridx = 2;
-		gbc_btnNewButton.gridy = 2;
-		add(btnNewButton, gbc_btnNewButton);
+		JButton btnGestionarPasajero = new JButton("GESTIONAR PASAJERO");
+		btnGestionarPasajero.setBackground(new Color(204, 255, 255));
+		btnGestionarPasajero.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnGestionarPasajero.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnGestionarPasajero = new GridBagConstraints();
+		gbc_btnGestionarPasajero.insets = new Insets(5, 10, 5, 10);
+		gbc_btnGestionarPasajero.gridx = 2;
+		gbc_btnGestionarPasajero.gridy = 2;
+		add(btnGestionarPasajero, gbc_btnGestionarPasajero);
 		
 		JButton btnReservarHabitacin = new JButton("RESERVAR HABITACIÓN");
 		btnReservarHabitacin.setBackground(new Color(204, 255, 255));
@@ -61,80 +60,76 @@ public class PanelPrincipal extends JPanel{
 		gbc_btnCancelarReserva.gridy = 2;
 		add(btnCancelarReserva, gbc_btnCancelarReserva);
 		
-		JButton btnNewButton_3 = new JButton("CHECK-IN");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_3.setBackground(new Color(204, 255, 255));
-		btnNewButton_3.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_3.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
-		gbc_btnNewButton_3.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_3.gridx = 2;
-		gbc_btnNewButton_3.gridy = 3;
-		add(btnNewButton_3, gbc_btnNewButton_3);
+		JButton btnCheckIn= new JButton("CHECK-IN");
+		btnCheckIn.setBackground(new Color(204, 255, 255));
+		btnCheckIn.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnCheckIn.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnCheckIn = new GridBagConstraints();
+		gbc_btnCheckIn.insets = new Insets(5, 10, 5, 10);
+		gbc_btnCheckIn.gridx = 2;
+		gbc_btnCheckIn.gridy = 3;
+		add(btnCheckIn, gbc_btnCheckIn);
 		
-		JButton btnNewButton_4 = new JButton("CHECK-OUT");
-		btnNewButton_4.setBackground(new Color(204, 255, 255));
-		btnNewButton_4.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_4.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_4 = new GridBagConstraints();
-		gbc_btnNewButton_4.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_4.gridx = 3;
-		gbc_btnNewButton_4.gridy = 3;
-		add(btnNewButton_4, gbc_btnNewButton_4);
+		JButton btnCheckOut= new JButton("CHECK-OUT");
+		btnCheckOut.setBackground(new Color(204, 255, 255));
+		btnCheckOut.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnCheckOut.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnCheckOut= new GridBagConstraints();
+		gbc_btnCheckOut.insets = new Insets(5, 10, 5, 10);
+		gbc_btnCheckOut.gridx = 3;
+		gbc_btnCheckOut.gridy = 3;
+		add(btnCheckOut, gbc_btnCheckOut);
 		
-		JButton btnNewButton_5 = new JButton("<html><body><center> GESTIONAR RESPONSABLE</br> DE PAGO</body></center></html>");
-		btnNewButton_5.setBackground(new Color(204, 255, 255));
-		btnNewButton_5.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_5.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_5 = new GridBagConstraints();
-		gbc_btnNewButton_5.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_5.gridx = 4;
-		gbc_btnNewButton_5.gridy = 3;
-		add(btnNewButton_5, gbc_btnNewButton_5);
+		JButton btnGestionarResponsable = new JButton("<html><body><center> GESTIONAR RESPONSABLE</br> DE PAGO</body></center></html>");
+		btnGestionarResponsable.setBackground(new Color(204, 255, 255));
+		btnGestionarResponsable.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnGestionarResponsable.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnGestionarResponsable = new GridBagConstraints();
+		gbc_btnGestionarResponsable.insets = new Insets(5, 10, 5, 10);
+		gbc_btnGestionarResponsable.gridx = 4;
+		gbc_btnGestionarResponsable.gridy = 3;
+		add(btnGestionarResponsable, gbc_btnGestionarResponsable);
 		
-		JButton btnNewButton_6 = new JButton("INGRESAR PAGO");
-		btnNewButton_6.setBackground(new Color(204, 255, 255));
-		btnNewButton_6.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_6.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_6 = new GridBagConstraints();
-		gbc_btnNewButton_6.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_6.gridx = 2;
-		gbc_btnNewButton_6.gridy = 4;
-		add(btnNewButton_6, gbc_btnNewButton_6);
+		JButton btnIngresarPago = new JButton("INGRESAR PAGO");
+		btnIngresarPago.setBackground(new Color(204, 255, 255));
+		btnIngresarPago.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnIngresarPago.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnIngresarPago = new GridBagConstraints();
+		gbc_btnIngresarPago.insets = new Insets(5, 10, 5, 10);
+		gbc_btnIngresarPago.gridx = 2;
+		gbc_btnIngresarPago.gridy = 4;
+		add(btnIngresarPago, gbc_btnIngresarPago);
 		
-		JButton btnNewButton_7 = new JButton("GESTIONAR LISTADOS");
-		btnNewButton_7.setBackground(new Color(204, 255, 255));
-		btnNewButton_7.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_7.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_7 = new GridBagConstraints();
-		gbc_btnNewButton_7.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_7.gridx = 3;
-		gbc_btnNewButton_7.gridy = 4;
-		add(btnNewButton_7, gbc_btnNewButton_7);
+		JButton btnGestionarListados = new JButton("GESTIONAR LISTADOS");
+		btnGestionarListados.setBackground(new Color(204, 255, 255));
+		btnGestionarListados.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnGestionarListados.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnGestionarListados = new GridBagConstraints();
+		gbc_btnGestionarListados.insets = new Insets(5, 10, 5, 10);
+		gbc_btnGestionarListados.gridx = 3;
+		gbc_btnGestionarListados.gridy = 4;
+		add(btnGestionarListados, gbc_btnGestionarListados);
 		
-		JButton btnNewButton_8 = new JButton("DAR DE ALTA PASAJERO");
-		btnNewButton_8.setBackground(new Color(204, 255, 255));
-		btnNewButton_8.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_8.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_8 = new GridBagConstraints();
-		gbc_btnNewButton_8.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_8.gridx = 4;
-		gbc_btnNewButton_8.gridy = 4;
-		add(btnNewButton_8, gbc_btnNewButton_8);
+		JButton btnDarAlta= new JButton("DAR DE ALTA PASAJERO");
+		btnDarAlta.setBackground(new Color(204, 255, 255));
+		btnDarAlta.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnDarAlta.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnDarAlta = new GridBagConstraints();
+		gbc_btnDarAlta.insets = new Insets(5, 10, 5, 10);
+		gbc_btnDarAlta.gridx = 4;
+		gbc_btnDarAlta.gridy = 4;
+		add(btnDarAlta, gbc_btnDarAlta);
 		
-		JButton btnNewButton_7_1 = new JButton("<html><body><center> INGRESAR NOTA</br> DE CREDITO <center></body> </html>");
-		btnNewButton_7_1.setPreferredSize(new Dimension(250, 40));
-		btnNewButton_7_1.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
-		btnNewButton_7_1.setBackground(new Color(204, 255, 255));
-		btnNewButton_7_1.setPreferredSize(new Dimension(250, 55));
-		GridBagConstraints gbc_btnNewButton_7_1 = new GridBagConstraints();
-		gbc_btnNewButton_7_1.insets = new Insets(5, 10, 5, 10);
-		gbc_btnNewButton_7_1.gridx = 3;
-		gbc_btnNewButton_7_1.gridy = 5;
-		add(btnNewButton_7_1, gbc_btnNewButton_7_1);
+		JButton btnIngresarNotaCredito = new JButton("<html><body><center> INGRESAR NOTA</br> DE CREDITO <center></body> </html>");
+		btnIngresarNotaCredito.setPreferredSize(new Dimension(250, 40));
+		btnIngresarNotaCredito.setFont(new Font("Leelawadee UI Semilight", Font.BOLD, 17));
+		btnIngresarNotaCredito.setBackground(new Color(204, 255, 255));
+		btnIngresarNotaCredito.setPreferredSize(new Dimension(250, 55));
+		GridBagConstraints gbc_btnIngresarNotaCredito= new GridBagConstraints();
+		gbc_btnIngresarNotaCredito.insets = new Insets(5, 10, 5, 10);
+		gbc_btnIngresarNotaCredito.gridx = 3;
+		gbc_btnIngresarNotaCredito.gridy = 5;
+		add(btnIngresarNotaCredito, gbc_btnIngresarNotaCredito);
 	}
 
 	
