@@ -21,7 +21,7 @@ public class framePrincipal {
 			ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
 			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-			ventana.setBackground(Color.GREEN);
+			ventana.setBackground(Color.GRAY);
 
 			panelAgregarPasajero = new PanelAgregarPasajero();
 			GridBagLayout gridBagLayout = (GridBagLayout) panelAgregarPasajero.getLayout();
