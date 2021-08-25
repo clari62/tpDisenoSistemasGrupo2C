@@ -3,6 +3,7 @@ package swing_menu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.SystemColor;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -23,16 +24,14 @@ public class framePrincipal {
 			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
 			PanelPrincipal panelPrincipal = new PanelPrincipal();
-			ventana.setContentPane(panelPrincipal);
-			ventana.setBackground(Color.GRAY);
-
-
-			//panelAgregarPasajero = new PanelAgregarPasajero();
-			//GridBagLayout gridBagLayout = (GridBagLayout) panelAgregarPasajero.getLayout();
-			//gridBagLayout.columnWeights = new double[] { 1.0 };
-			
-			//ventana.setContentPane(panelAgregarPasajero);
-			ventana.pack();
+			//ventana.setContentPane(panelPrincipal);
+			//ventana.setBackground(Color.GRAY);
+			ventana.setSize(new Dimension(800,600));
+			ventana.setMinimumSize(new Dimension(800,600));
+			//ventana.setResizable(false);
+			panelAgregarPasajero = new PanelAgregarPasajero();
+			ventana.setContentPane(panelAgregarPasajero);
+			//ventana.pack();
 			ventana.setLocationRelativeTo(null);
 			ventana.setVisible(true);
 

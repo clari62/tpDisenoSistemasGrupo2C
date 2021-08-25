@@ -23,6 +23,7 @@ import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.border.LineBorder;
+import java.awt.SystemColor;
 
 public class PanelAgregarPasajero extends JPanel {
 	
@@ -80,29 +81,33 @@ private JLabel piso;
 private JTextField textPiso;
 
 public PanelAgregarPasajero() {
-	setBackground(Color.WHITE);
+	setBackground(SystemColor.controlHighlight);
+	this.setSize(new Dimension(800,600));
+	//this.setMinimumSize(new Dimension(800,600));
+
 	GridBagLayout gridBagLayout = new GridBagLayout();
 
-	gridBagLayout.columnWidths = new int[] { 150, 150, 150, 150,150};
-	//gridBagLayout.rowHeights = new int[] { 0, 26, 19, 29, 19, 0, 19, 0, 19, 0, 0, 21, 0, 0, 110, 38, 0 };
-	//gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0, 1.0 };
-	gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
-			0.0, 0.0 };
+	gridBagLayout.columnWidths = new int[] {500,150,150, 150, 150, 150,170};
+	gridBagLayout.rowHeights = new int[] { 30, 26, 19, 29, 19, 0, 19, 0, 19, 0, 0, 21, 0, 0, 110, 38, 0 };
+	gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0, 1.0 };
+	gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0 };
 	setLayout(gridBagLayout);
-
+	
 	JLabel apellido = new JLabel("Apellido(*): ");
-	apellido.setFont(new Font("Arial", Font.BOLD, 14));
+	apellido.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
 	GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 	gbc_lblNewLabel_2.anchor = GridBagConstraints.EAST;
-	gbc_lblNewLabel_2.insets = new Insets(5, 5, 5, 5);
+	gbc_lblNewLabel_2.insets = new Insets(10, 5, 5, 5);
 	gbc_lblNewLabel_2.gridx = 0;
 	gbc_lblNewLabel_2.gridy = 2;
 	add(apellido, gbc_lblNewLabel_2);
 
 	textApellido = new JTextField();
+	textApellido.setBackground(SystemColor.control);
 	GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+	//textApellido.setBackground(new Color(192, 192, 192));
 	gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textField_1.insets = new Insets(5, 0, 5, 5);
+	gbc_textField_1.insets = new Insets(10, 0, 5, 5);
 	gbc_textField_1.gridx = 1;
 	gbc_textField_1.gridy = 2;
 	add(textApellido, gbc_textField_1);
@@ -118,10 +123,10 @@ public PanelAgregarPasajero() {
 	gbc_lblNewLabel_1.anchor = GridBagConstraints.EAST;
 	
 	nacimiento = new JLabel("Fecha de nacimiento(*):");
-	nacimiento.setFont(new Font("Arial", Font.BOLD, 14));
+	nacimiento.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
 	GridBagConstraints gbc_lblNewLabel_13 = new GridBagConstraints();
 	gbc_lblNewLabel_13.anchor = GridBagConstraints.EAST;
-	gbc_lblNewLabel_13.insets = new Insets(5, 0, 5, 5);
+	gbc_lblNewLabel_13.insets = new Insets(10, 0, 5, 5);
 	gbc_lblNewLabel_13.gridx = 2;
 	gbc_lblNewLabel_13.gridy = 2;
 	add(nacimiento, gbc_lblNewLabel_13);
@@ -131,7 +136,7 @@ public PanelAgregarPasajero() {
 	textFechaNacimiento.setColumns(10);
 	GridBagConstraints gbc_textField_4 = new GridBagConstraints();
 	gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textField_4.insets = new Insets(5, 0, 5, 5);
+	gbc_textField_4.insets = new Insets(10, 0, 5, 5);
 	gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_4.gridx = 3;
 	gbc_textField_4.gridy = 2;
@@ -386,20 +391,20 @@ public PanelAgregarPasajero() {
 	add(co10, gbc_lblNewLabel_18);
 	
 	panel = new JPanel();
+	panel.setBackground(Color.white);
 	panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 	GridBagConstraints gbc_panel = new GridBagConstraints();
 	gbc_panel.anchor = GridBagConstraints.EAST;
 	gbc_panel.gridwidth = 4;
 	gbc_panel.gridheight = 3;
-	gbc_panel.insets = new Insets(10, 20, 0, 0);
+	gbc_panel.insets = new Insets(0, 20, 20, 0);
 	gbc_panel.gridx = 0;
 	gbc_panel.gridy = 12;
 	add(panel, gbc_panel);
 	GridBagLayout gbl_panel = new GridBagLayout();
-	
+
 	gbl_panel.columnWidths = new int[] { 160, 160, 160, 160};
-	gbl_panel.rowHeights = new int[] { 0, 26, 19, 29, 19, 0, 19, 0};
-	//gbl_panel.rowHeights = new int[] { 0, 26, 19, 0, 19, 0, 19, 0, 19, 0, 0, 21, 0, 0, 0, 0, 0 };
+	gbl_panel.rowHeights = new int[] {30, 26, 19, 29, 19, 30, 19, 10};
 	gbl_panel.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0 };
 	gbl_panel.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
 		panel.setLayout(gbl_panel);
@@ -425,7 +430,7 @@ public PanelAgregarPasajero() {
 	nroCalle = new JLabel("N\u00FAmero(*):");
 	nroCalle.setFont(new Font("Arial", Font.BOLD, 14));
 	GridBagConstraints gbc_lblNewLabel_30 = new GridBagConstraints();
-	gbc_lblNewLabel_30.anchor = GridBagConstraints.WEST;
+	gbc_lblNewLabel_30.anchor = GridBagConstraints.EAST;
 	gbc_lblNewLabel_30.insets = new Insets(0, 5, 5, 5);
 	gbc_lblNewLabel_30.gridx = 2;
 	gbc_lblNewLabel_30.gridy = 0;
@@ -454,7 +459,7 @@ public PanelAgregarPasajero() {
 	co12.setForeground(Color.RED);
 	co12.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_lblNewLabel_31 = new GridBagConstraints();
-	gbc_lblNewLabel_31.anchor = GridBagConstraints.WEST;
+	gbc_lblNewLabel_31.anchor = GridBagConstraints.EAST;
 	gbc_lblNewLabel_31.insets = new Insets(0, 5, 5, 5);
 	gbc_lblNewLabel_31.gridx = 2;
 	gbc_lblNewLabel_31.gridy = 1;
@@ -481,7 +486,7 @@ public PanelAgregarPasajero() {
 	piso = new JLabel("Piso:");
 	piso.setFont(new Font("Arial", Font.BOLD, 14));
 	GridBagConstraints gbc_depto_1 = new GridBagConstraints();
-	gbc_depto_1.anchor = GridBagConstraints.WEST;
+	gbc_depto_1.anchor = GridBagConstraints.EAST;
 	gbc_depto_1.insets = new Insets(0, 5, 5, 5);
 	gbc_depto_1.gridx = 2;
 	gbc_depto_1.gridy = 2;
@@ -516,7 +521,7 @@ public PanelAgregarPasajero() {
 	provincia = new JLabel("Provincia(*):");
 	provincia.setFont(new Font("Arial", Font.BOLD, 14));
 	GridBagConstraints gbc_lblNewLabel_26 = new GridBagConstraints();
-	gbc_lblNewLabel_26.anchor = GridBagConstraints.WEST;
+	gbc_lblNewLabel_26.anchor = GridBagConstraints.EAST;
 	gbc_lblNewLabel_26.insets = new Insets(0, 5, 5, 5);
 	gbc_lblNewLabel_26.gridx = 2;
 	gbc_lblNewLabel_26.gridy = 3;
@@ -544,7 +549,7 @@ public PanelAgregarPasajero() {
 	co14.setForeground(Color.RED);
 	co14.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_lblNewLabel_28 = new GridBagConstraints();
-	gbc_lblNewLabel_28.anchor = GridBagConstraints.WEST;
+	gbc_lblNewLabel_28.anchor = GridBagConstraints.EAST;
 	gbc_lblNewLabel_28.insets = new Insets(0, 5, 5, 5);
 	gbc_lblNewLabel_28.gridx = 2;
 	gbc_lblNewLabel_28.gridy = 4;
@@ -570,7 +575,7 @@ public PanelAgregarPasajero() {
 	codPostal = new JLabel("C\u00F3digo Postal(*):");
 	codPostal.setFont(new Font("Arial", Font.BOLD, 14));
 	GridBagConstraints gbc_lblNewLabel_27 = new GridBagConstraints();
-	gbc_lblNewLabel_27.anchor = GridBagConstraints.WEST;
+	gbc_lblNewLabel_27.anchor = GridBagConstraints.EAST;
 	gbc_lblNewLabel_27.insets = new Insets(0, 5, 5, 5);
 	gbc_lblNewLabel_27.gridx = 2;
 	gbc_lblNewLabel_27.gridy = 5;
@@ -599,13 +604,13 @@ public PanelAgregarPasajero() {
 	co16.setForeground(Color.RED);
 	co16.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_lblNewLabel_29 = new GridBagConstraints();
-	gbc_lblNewLabel_29.anchor = GridBagConstraints.WEST;
+	gbc_lblNewLabel_29.anchor = GridBagConstraints.EAST;
 	gbc_lblNewLabel_29.insets = new Insets(0, 5, 5, 5);
 	gbc_lblNewLabel_29.gridx = 2;
 	gbc_lblNewLabel_29.gridy = 6;
 	panel.add(co16, gbc_lblNewLabel_29);
 
-	/*
+
 	botonSiguiente = new JButton("SIGUIENTE");
 	botonSiguiente.setBackground(Color.WHITE);
 	botonSiguiente.setFont(new Font("Arial", Font.BOLD, 12));
@@ -625,7 +630,7 @@ public PanelAgregarPasajero() {
 	gbc_btnNewButton_1.gridx = 4;
 	gbc_btnNewButton_1.gridy = 15;
 	add(botonCancelar, gbc_btnNewButton_1);
-	*/
+	
 	
 	List<JLabel> labels = new ArrayList<JLabel>();
 	labels.add(co1);labels.add(co2);labels.add(co3);labels.add(co4);labels.add(co5);
