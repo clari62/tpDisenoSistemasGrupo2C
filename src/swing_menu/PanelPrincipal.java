@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.Box;
 
 public class PanelPrincipal extends JPanel{
 	public PanelPrincipal() {
@@ -129,7 +130,7 @@ public class PanelPrincipal extends JPanel{
 		btnIngresarNotaCredito.setBackground(new Color(204, 255, 255));
 		btnIngresarNotaCredito.setPreferredSize(new Dimension(250, 55));
 		GridBagConstraints gbc_btnIngresarNotaCredito= new GridBagConstraints();
-		gbc_btnIngresarNotaCredito.insets = new Insets(5, 10, 5, 10);
+		gbc_btnIngresarNotaCredito.insets = new Insets(5, 10, 0, 10);
 		gbc_btnIngresarNotaCredito.gridx = 3;
 		gbc_btnIngresarNotaCredito.gridy = 5;
 		add(btnIngresarNotaCredito, gbc_btnIngresarNotaCredito);
