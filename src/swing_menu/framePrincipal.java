@@ -9,11 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 import swing_pasajeros.PanelAgregarPasajero;
+import swing_pasajeros.PanelGestionarPasajero;
 
 public class framePrincipal {
 	private static JFrame ventana;
 	private static PanelAgregarPasajero panelAgregarPasajero;
-	
+	private static PanelGestionarPasajero panelGestionarPasajero;
+
 	public static void main(String[] args) {
 	
 			ventana = new JFrame();
@@ -24,12 +26,11 @@ public class framePrincipal {
 
 			PanelPrincipal panelPrincipal = new PanelPrincipal();
 			//ventana.setContentPane(panelPrincipal);
-			//ventana.setBackground(Color.GRAY);
 			ventana.setSize(new Dimension(800,600));
-			//ventana.setMinimumSize(new Dimension(800,600));
-			//ventana.setResizable(false);
+					
 			panelAgregarPasajero = new PanelAgregarPasajero();
-			ventana.setContentPane(panelAgregarPasajero);
+			panelGestionarPasajero = new PanelGestionarPasajero();
+			ventana.setContentPane(panelGestionarPasajero);
 			//ventana.pack();
 			ventana.setLocationRelativeTo(null); 
 			ventana.setVisible(true);
