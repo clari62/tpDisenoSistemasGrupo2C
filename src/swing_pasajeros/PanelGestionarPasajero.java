@@ -24,6 +24,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
@@ -34,9 +35,12 @@ import java.awt.Component;
 import javax.swing.Box;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.Image;
+
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
+import javax.swing.Icon;
 
 public class PanelGestionarPasajero extends JPanel {
 	private JTextField textField;
@@ -53,9 +57,9 @@ public PanelGestionarPasajero() {
 	this.setSize(new Dimension(800,600));
 	GridBagLayout gridBagLayout = new GridBagLayout();
 	//gridBagLayout.columnWidths = new int[]{0, 277, 280, 0};
-	gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0};
-	gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+	gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
 	setLayout(gridBagLayout);
 	
 	JPanel panel = new JPanel();
@@ -154,7 +158,7 @@ public PanelGestionarPasajero() {
 	
 	JButton btnNewButton = new JButton("  BUSCAR");
 	btnNewButton.setFont(new Font("Leelawadee UI", Font.BOLD, 12));
-	btnNewButton.setBackground(Color.WHITE);
+	btnNewButton.setBackground(new Color(204,255,255));
 	GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 	gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 	gbc_btnNewButton.anchor = GridBagConstraints.EAST;
@@ -164,7 +168,7 @@ public PanelGestionarPasajero() {
 	
 	JButton btnCancelar = new JButton("CANCELAR");
 	btnCancelar.setFont(new Font("Leelawadee UI", Font.BOLD, 12));
-	btnCancelar.setBackground(Color.WHITE);
+	btnCancelar.setBackground(new Color(204,255,255));
 	GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
 	gbc_btnCancelar.insets = new Insets(0, 5, 5, 0);
 	gbc_btnCancelar.anchor = GridBagConstraints.WEST;
@@ -172,10 +176,10 @@ public PanelGestionarPasajero() {
 	gbc_btnCancelar.gridy = 5;
 	panel.add(btnCancelar, gbc_btnCancelar);
 	
+	
 	JPanel panel_1 = new JPanel();
 	panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 	GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-	gbc_panel_1.gridheight = 10;
 	gbc_panel_1.insets = new Insets(0, 0, 5, 0);
 	gbc_panel_1.gridwidth = 2;
 	gbc_panel_1.fill = GridBagConstraints.BOTH;
@@ -183,10 +187,10 @@ public PanelGestionarPasajero() {
 	gbc_panel_1.gridy = 8;
 	add(panel_1, gbc_panel_1);
 	GridBagLayout gbl_panel_1 = new GridBagLayout();
-	gbl_panel_1.columnWidths = new int[]{0, 65, 0, 0, 0, 0, 0};
-	gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	gbl_panel_1.columnWeights = new double[]{0.0, Double.MIN_VALUE, 0.0, 0.0, 0.0, 0.0, 0.0};
-	gbl_panel_1.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+	gbl_panel_1.columnWidths = new int[]{0, 0, 100, 0, 0, 0, 0, 0, 65, 0, 0, 0, 0, 0, 0};
+	gbl_panel_1.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+	gbl_panel_1.rowWeights = new double[]{1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 	panel_1.setLayout(gbl_panel_1);
 
 	table = new JTable();
@@ -209,6 +213,11 @@ public PanelGestionarPasajero() {
 			{null, null, null, null, null},
 			{null, null, null, null, null},
 			{null, null, null, null, null},
+			{null, null, null, null, null},
+			{null, null, null, null, null},
+			{null, null, null, null, null},
+			{null, null, null, null, null},
+			{null, null, null, null, null},
 		},
 		new String[] {
 			"Apellido", "Nombres", "Tipo Documento", "Nro. Documento", "Modificar"
@@ -219,15 +228,60 @@ public PanelGestionarPasajero() {
 //	autoajustarAnchoColumnas(table);
 	table.setBorder(new LineBorder(new Color(0, 0, 0)));
 	GridBagConstraints gbc_table = new GridBagConstraints();
-	gbc_table.gridwidth = 9;
+	gbc_table.gridwidth = 16;
 
 	JScrollPane scrollPane = new JScrollPane(table);
-	gbc_table.insets = new Insets(5, 5, 5, 5);
+	gbc_table.insets = new Insets(5, 5, 5, 0);
 	gbc_table.fill = GridBagConstraints.BOTH;
-	gbc_table.gridx = 0;
+	gbc_table.gridx = 1;
 	gbc_table.gridy = 0;
 	//add(scrollPane, gbc_table);
 	panel_1.add(scrollPane, gbc_table);
+	
+	ImageIcon flechaDerecha = new ImageIcon(new ImageIcon("./images/flechaNavegacionDerecha.png")
+			.getImage().getScaledInstance(15, 15, Image.SCALE_DEFAULT));
+		
+	ImageIcon flechaIzquierda = new ImageIcon(new ImageIcon("./images/flechaNavegacionIzquierda.png")
+			.getImage().getScaledInstance(15, 15, Image.SCALE_DEFAULT));
+	
+	JLabel lblNewLabel_1 = new JLabel("Pagina");
+	GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
+	gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
+	gbc_lblNewLabel_1.gridx = 3;
+	gbc_lblNewLabel_1.gridy = 2;
+	panel_1.add(lblNewLabel_1, gbc_lblNewLabel_1);
+
+	JButton btnIzquierda = new JButton(flechaIzquierda);
+	btnIzquierda.setBackground(new Color(204,255,255));
+	GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
+	gbc_btnNewButton_1.fill = GridBagConstraints.VERTICAL;
+	gbc_btnNewButton_1.anchor = GridBagConstraints.EAST;
+	gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
+	gbc_btnNewButton_1.gridx = 2;
+	gbc_btnNewButton_1.gridy = 2;
+	panel_1.add(btnIzquierda, gbc_btnNewButton_1);
+			
+	JButton btnDerecha = new JButton(flechaDerecha);
+	btnDerecha.setBackground(new Color(204,255,255));
+	GridBagConstraints gbc_btnSiguiente_1 = new GridBagConstraints();
+	gbc_btnSiguiente_1.fill = GridBagConstraints.VERTICAL;
+	gbc_btnSiguiente_1.gridwidth = 2;
+	gbc_btnSiguiente_1.anchor = GridBagConstraints.WEST;
+	gbc_btnSiguiente_1.insets = new Insets(0, 0, 5, 5);
+	gbc_btnSiguiente_1.gridx = 4;
+	gbc_btnSiguiente_1.gridy = 2;
+	panel_1.add(btnDerecha, gbc_btnSiguiente_1);
+	
+	JButton btnSiguiente = new JButton("SIGUIENTE");
+	btnSiguiente.setBackground(new Color(204,255,255));
+	GridBagConstraints gbc_btnSiguiente = new GridBagConstraints();
+	gbc_btnSiguiente.gridwidth = 5;
+	gbc_btnSiguiente.insets = new Insets(0, 50, 5, 5);
+	gbc_btnSiguiente.gridx = 2;
+	gbc_btnSiguiente.gridy = 4;
+	panel_1.add(btnSiguiente, gbc_btnSiguiente);
+	
+	
 }
 
 
@@ -244,14 +298,14 @@ public DefaultTableModel renovarTabla() {
 	String nombreColumnas[] = { "Apellido", "Nombres", "Tipo Documento", "Nro. Documento"};
 	datosFila = new Object[2][4];
 	//for (int i = 0; i < nuevosDatos.size(); i++) {
-		datosFila[0][0] = "Espertino";
+	/*	datosFila[0][0] = "Espertino";
 		datosFila[0][1] = "Clarisa";
 		datosFila[0][2] = "DNI";
 		datosFila[0][3] = "42530390";
 		datosFila[1][0] = "Espertino";
 		datosFila[1][1] = "Clarisa";
 		datosFila[1][2] = "DNI";
-		datosFila[1][3] = "42530390";
+		datosFila[1][3] = "42530390";*/
 	//}
 	// Crear modelo de la tabla
 	model = new DefaultTableModel(datosFila, nombreColumnas) {
