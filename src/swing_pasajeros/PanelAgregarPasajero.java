@@ -88,6 +88,7 @@ public PanelAgregarPasajero() {
 	//gridBagLayout.columnWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 1.0, 1.0 };
 	gridBagLayout.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0,
 			0.0, 0.0 };
+	setBackground(new Color(192, 192, 192));
 	setLayout(gridBagLayout);
 
 	JLabel apellido = new JLabel("Apellido(*): ");
@@ -101,6 +102,7 @@ public PanelAgregarPasajero() {
 
 	textApellido = new JTextField();
 	GridBagConstraints gbc_textField_1 = new GridBagConstraints();
+	textApellido.setBackground(Color.LIGHT_GRAY);
 	gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_1.insets = new Insets(5, 0, 5, 5);
 	gbc_textField_1.gridx = 1;
