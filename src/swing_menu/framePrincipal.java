@@ -3,17 +3,19 @@ package swing_menu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
+import java.awt.SystemColor;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 import swing_pasajeros.PanelAgregarPasajero;
-
+//import swing_pasajeros.PanelGestionarPasajero;
 
 public class framePrincipal {
 	private static JFrame ventana;
 	private static PanelAgregarPasajero panelAgregarPasajero;
-	
+//	private static PanelGestionarPasajero panelGestionarPasajero;
+
 	public static void main(String[] args) {
 	
 			ventana = new JFrame();
@@ -23,6 +25,7 @@ public class framePrincipal {
 			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
 			PanelPrincipal panelPrincipal = new PanelPrincipal();
+
 		ventana.setContentPane(panelPrincipal);
 			ventana.setBackground(Color.GRAY);
 
@@ -34,6 +37,16 @@ public class framePrincipal {
 		//	ventana.setContentPane(panelAgregarPasajero);
 			ventana.pack();
 			ventana.setLocationRelativeTo(null);
+
+			//ventana.setContentPane(panelPrincipal);
+			ventana.setSize(new Dimension(800,600));
+					
+			panelAgregarPasajero = new PanelAgregarPasajero();
+		//	panelGestionarPasajero = new PanelGestionarPasajero();
+			//ventana.setContentPane(panelGestionarPasajero);
+			//ventana.pack();
+			ventana.setLocationRelativeTo(null); 
+
 			ventana.setVisible(true);
 
 	}

@@ -9,19 +9,27 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Insets;
+import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.Box;
 
 public class PanelPrincipal extends JPanel{
 	public PanelPrincipal() {
-		setBackground(new Color(192, 192, 192));
+	//	setBackground(new Color(192, 192, 192));
+		setBackground(SystemColor.controlHighlight);
+		//setBackground(Color.white);
 		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+		//gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
+		//gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+		gridBagLayout.columnWidths = new int[]{120, 120, 120, 120, 120,120,100};
+		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		setLayout(gridBagLayout);
