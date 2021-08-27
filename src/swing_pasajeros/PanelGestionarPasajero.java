@@ -246,6 +246,8 @@ public PanelGestionarPasajero() {
 			.getImage().getScaledInstance(15, 15, Image.SCALE_SMOOTH));
 	
 	JLabel lblNewLabel_1 = new JLabel("Pagina");
+	lblNewLabel_1.setFont(new Font("Leelawadee UI", Font.BOLD, 12));
+
 	GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 	gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 	gbc_lblNewLabel_1.gridx = 3;
