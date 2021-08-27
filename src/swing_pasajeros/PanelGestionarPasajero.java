@@ -54,6 +54,7 @@ public class PanelGestionarPasajero extends JPanel {
 	private Object datosFila[][];
 
 
+@SuppressWarnings("serial")
 public PanelGestionarPasajero() {
 	setBackground(SystemColor.controlHighlight);
 	this.setSize(new Dimension(800,600));
@@ -199,29 +200,17 @@ public PanelGestionarPasajero() {
 	table.setSurrendersFocusOnKeystroke(true);
 	table.setBackground(Color.WHITE);
 	table.setFont(new Font("Leelawadee UI", Font.PLAIN, 11));
-
-	table.setModel(new DefaultTableModel(
-		new Object[][] {
-			{"Clarisa", "Espertino", "DNI", "42530390", null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-		},
-		new String[] {
+	
+	Object[][] datos = new Object[][] {
+		{"Clarisa", "Espertino", "DNI", "42530390", null}		
+	};
+	
+	String[] nombresColumnas = new String[] {
 			"Apellido", "Nombres", "Tipo Documento", "Nro. Documento", "Modificar"
-		}
-	) {
+		};
+	
+	table.setModel(new DefaultTableModel(
+		datos,nombresColumnas) {
 		Class[] columnTypes = new Class[] {
 			String.class, String.class, String.class, String.class, Boolean.class
 		};
@@ -237,7 +226,7 @@ public PanelGestionarPasajero() {
 	});
 
 //table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//	autoajustarAnchoColumnas(table);
+	autoajustarAnchoColumnas(table);
 	table.setBorder(new LineBorder(new Color(0, 0, 0)));
 	GridBagConstraints gbc_table = new GridBagConstraints();
 	gbc_table.gridwidth = 16;
@@ -293,7 +282,6 @@ public PanelGestionarPasajero() {
 	gbc_btnSiguiente.gridy = 4;
 	panel_1.add(btnSiguiente, gbc_btnSiguiente);
 	
-
 }
 
 
@@ -306,24 +294,21 @@ public void setModel(DefaultTableModel model) {
 	table_1.setModel(model);
 }
 
-public DefaultTableModel renovarTabla() {
+/*public DefaultTableModel renovarTabla() {
 	String nombreColumnas[] = { "Apellido", "Nombres", "Tipo Documento", "Nro. Documento"};
 	datosFila = new Object[2][4];
 	//for (int i = 0; i < nuevosDatos.size(); i++) {
-	/*	datosFila[0][0] = "Espertino";
+		datosFila[0][0] = "Espertino";
 		datosFila[0][1] = "Clarisa";
 		datosFila[0][2] = "DNI";
 		datosFila[0][3] = "42530390";
 		datosFila[1][0] = "Espertino";
 		datosFila[1][1] = "Clarisa";
 		datosFila[1][2] = "DNI";
-		datosFila[1][3] = "42530390";*/
+		datosFila[1][3] = "42530390";
 	//}
 	// Crear modelo de la tabla
 	model = new DefaultTableModel(datosFila, nombreColumnas) {
-		/**
-		 * 
-		 */
 		private static final long serialVersionUID = 1L;
 
 		public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -331,9 +316,10 @@ public DefaultTableModel renovarTabla() {
 		}
 	};
 	return model;
-}
+}*/
 
-/*public void autoajustarAnchoColumnas(JTable table) {
+public void autoajustarAnchoColumnas(JTable table) {
+	final TableColumnModel columnModel = table.getColumnModel();
 	for (int column = 0; column < table.getColumnCount(); column++) {
 		int width = 15; // Min width
 		for (int row = 0; row < table.getRowCount(); row++) {
@@ -345,5 +331,5 @@ public DefaultTableModel renovarTabla() {
 			width = 300;
 		columnModel.getColumn(column).setPreferredWidth(width);
 	}
-}*/
+}
 }

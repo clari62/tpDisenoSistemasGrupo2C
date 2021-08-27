@@ -29,7 +29,7 @@ public class framePrincipal {
 					
 			panelAgregarPasajero = new PanelAgregarPasajero();
 			panelGestionarPasajero = new PanelGestionarPasajero();
-			ventana.setContentPane(panelGestionarPasajero);
+			ventana.setContentPane(panelAgregarPasajero);
 			//ventana.pack();
 			ventana.setLocationRelativeTo(null); 
 			ventana.setVisible(true);
