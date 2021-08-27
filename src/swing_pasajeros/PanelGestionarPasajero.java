@@ -59,24 +59,24 @@ public PanelGestionarPasajero() {
 	setBackground(SystemColor.controlHighlight);
 	this.setSize(new Dimension(800,600));
 	GridBagLayout gridBagLayout = new GridBagLayout();
-	//gridBagLayout.columnWidths = new int[]{0, 277, 280, 0};
-	gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0};
-	gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+//	gridBagLayout.rowHeights = new int[]{151, 0};
+//	gridBagLayout.columnWeights = new double[]{1.0, 0.0};
+	gridBagLayout.rowWeights = new double[]{0.0, 1.0};
+	gridBagLayout.columnWidths = new int[]{36, 244};
+	
 	setLayout(gridBagLayout);
 	
 	JPanel panel = new JPanel();
 	panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 	GridBagConstraints gbc_panel = new GridBagConstraints();
-	gbc_panel.gridheight = 7;
 	gbc_panel.gridwidth = 2;
-	gbc_panel.insets = new Insets(10, 0, 5, 0);
-	gbc_panel.fill = GridBagConstraints.VERTICAL;
-	gbc_panel.gridx = 1;
-	gbc_panel.gridy = 1;
+	gbc_panel.insets = new Insets(5, 10, 5, 10);
+	gbc_panel.fill = GridBagConstraints.BOTH;
+	gbc_panel.gridx = 0;
+	gbc_panel.gridy = 0;
 	add(panel, gbc_panel);
 	GridBagLayout gbl_panel = new GridBagLayout();
-	gbl_panel.columnWidths = new int[]{0, 156, 269, 0};
+	gbl_panel.columnWidths = new int[]{0, 254, 360, 0};
 	gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
 	gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 	gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
@@ -166,7 +166,7 @@ public PanelGestionarPasajero() {
 	gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 	gbc_btnNewButton.anchor = GridBagConstraints.EAST;
 	gbc_btnNewButton.gridx = 1;
-	gbc_btnNewButton.gridy = 5;
+	gbc_btnNewButton.gridy = 4;
 	panel.add(btnNewButton, gbc_btnNewButton);
 	
 	JButton btnCancelar = new JButton("CANCELAR");
@@ -176,18 +176,18 @@ public PanelGestionarPasajero() {
 	gbc_btnCancelar.insets = new Insets(0, 5, 5, 0);
 	gbc_btnCancelar.anchor = GridBagConstraints.WEST;
 	gbc_btnCancelar.gridx = 2;
-	gbc_btnCancelar.gridy = 5;
+	gbc_btnCancelar.gridy = 4;
 	panel.add(btnCancelar, gbc_btnCancelar);
 	
 	
 	JPanel panel_1 = new JPanel();
 	panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 	GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-	gbc_panel_1.insets = new Insets(0, 0, 5, 0);
+	gbc_panel_1.insets = new Insets(5, 10, 5, 10);
 	gbc_panel_1.gridwidth = 2;
 	gbc_panel_1.fill = GridBagConstraints.BOTH;
-	gbc_panel_1.gridx = 1;
-	gbc_panel_1.gridy = 8;
+	gbc_panel_1.gridx = 0;
+	gbc_panel_1.gridy = 1;
 	add(panel_1, gbc_panel_1);
 	GridBagLayout gbl_panel_1 = new GridBagLayout();
 	gbl_panel_1.columnWidths = new int[]{0, 0, 100, 0, 0, 0, 0, 0, 65, 0, 0, 0, 0, 0, 0};
@@ -232,7 +232,7 @@ public PanelGestionarPasajero() {
 	gbc_table.gridwidth = 16;
 
 	JScrollPane scrollPane = new JScrollPane(table);
-	gbc_table.insets = new Insets(5, 5, 5, 0);
+	gbc_table.insets = new Insets(5, 5, 5, 5);
 	gbc_table.fill = GridBagConstraints.BOTH;
 	gbc_table.gridx = 1;
 	gbc_table.gridy = 0;
