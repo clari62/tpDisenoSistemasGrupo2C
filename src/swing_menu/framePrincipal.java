@@ -22,10 +22,9 @@ public class framePrincipal {
 			ventana.setTitle("MENU PRINCIPAL");
 			ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+		//	ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
 			PanelPrincipal panelPrincipal = new PanelPrincipal();
-			//ventana.setContentPane(panelPrincipal);
 			ventana.setSize(new Dimension(800,600));
 					
 			panelAgregarPasajero = new PanelAgregarPasajero();

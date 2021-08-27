@@ -29,6 +29,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
+
+
 import java.awt.SystemColor;
 import java.awt.Button;
 import java.awt.Component;
@@ -195,15 +197,12 @@ public PanelGestionarPasajero() {
 
 	table = new JTable();
 	table.setSurrendersFocusOnKeystroke(true);
-	table.setRowSelectionAllowed(false);
 	table.setBackground(Color.WHITE);
-	table.setEnabled(false);
 	table.setFont(new Font("Leelawadee UI", Font.PLAIN, 11));
 
-	//model = renovarTabla();
 	table.setModel(new DefaultTableModel(
 		new Object[][] {
-			{null, null, null, null, null},
+			{"Clarisa", "Espertino", "DNI", "42530390", null},
 			{null, null, null, null, null},
 			{null, null, null, null, null},
 			{null, null, null, null, null},
@@ -222,9 +221,22 @@ public PanelGestionarPasajero() {
 		new String[] {
 			"Apellido", "Nombres", "Tipo Documento", "Nro. Documento", "Modificar"
 		}
-	));
+	) {
+		Class[] columnTypes = new Class[] {
+			String.class, String.class, String.class, String.class, Boolean.class
+		};
+		public Class getColumnClass(int columnIndex) {
+			return columnTypes[columnIndex];
+		}
+		boolean[] columnEditables = new boolean[] {
+			false, false, false, false, true
+		};
+		public boolean isCellEditable(int row, int column) {
+			return columnEditables[column];
+		}
+	});
 
-	table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+//table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 //	autoajustarAnchoColumnas(table);
 	table.setBorder(new LineBorder(new Color(0, 0, 0)));
 	GridBagConstraints gbc_table = new GridBagConstraints();
@@ -239,10 +251,10 @@ public PanelGestionarPasajero() {
 	panel_1.add(scrollPane, gbc_table);
 	
 	ImageIcon flechaDerecha = new ImageIcon(new ImageIcon("./images/flechaNavegacionDerecha.png")
-			.getImage().getScaledInstance(15, 15, Image.SCALE_DEFAULT));
+			.getImage().getScaledInstance(15, 15, Image.SCALE_SMOOTH));
 		
 	ImageIcon flechaIzquierda = new ImageIcon(new ImageIcon("./images/flechaNavegacionIzquierda.png")
-			.getImage().getScaledInstance(15, 15, Image.SCALE_DEFAULT));
+			.getImage().getScaledInstance(15, 15, Image.SCALE_SMOOTH));
 	
 	JLabel lblNewLabel_1 = new JLabel("Pagina");
 	GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
@@ -281,7 +293,7 @@ public PanelGestionarPasajero() {
 	gbc_btnSiguiente.gridy = 4;
 	panel_1.add(btnSiguiente, gbc_btnSiguiente);
 	
-	
+
 }
 
 
