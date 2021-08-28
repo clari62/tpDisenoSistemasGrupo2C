@@ -9,12 +9,21 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 import swing_pasajeros.PanelAgregarPasajero;
+
 //import swing_pasajeros.PanelGestionarPasajero;
+
+import swing_pasajeros.PanelGestionarPasajero;
+//import swing_reservas.PanelReservarHabitacion2;
+
 
 public class framePrincipal {
 	private static JFrame ventana;
 	private static PanelAgregarPasajero panelAgregarPasajero;
+
 //	private static PanelGestionarPasajero panelGestionarPasajero;
+
+
+	private static PanelGestionarPasajero panelGestionarPasajero;
 
 	public static void main(String[] args) {
 	
@@ -22,10 +31,11 @@ public class framePrincipal {
 			ventana.setTitle("MENU PRINCIPAL");
 			ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+		//	ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
 			PanelPrincipal panelPrincipal = new PanelPrincipal();
 			ventana.setSize(new Dimension(800,600));
+
 			ventana.setContentPane(panelPrincipal);
 			ventana.setBackground(Color.GRAY);
 
@@ -41,9 +51,13 @@ public class framePrincipal {
 			panelAgregarPasajero = new PanelAgregarPasajero();
 		//	panelGestionarPasajero = new PanelGestionarPasajero();
 			//ventana.setContentPane(panelGestionarPasajero);
-			//ventana.pack();
-			ventana.setLocationRelativeTo(null); 
 
+			
+			//PanelReservarHabitacion2 panelReservarHabitacion2 = new PanelReservarHabitacion2();
+			
+			panelAgregarPasajero = new PanelAgregarPasajero();
+			panelGestionarPasajero = new PanelGestionarPasajero();
+		//	ventana.setContentPane(panelReservarHabitacion2);
 			ventana.setVisible(true);
 
 	}

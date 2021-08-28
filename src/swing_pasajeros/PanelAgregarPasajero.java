@@ -32,6 +32,9 @@ import java.awt.GridLayout;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
+
 public class PanelAgregarPasajero extends JPanel {
 	
 private JLabel apellido;
@@ -39,8 +42,6 @@ private JTextField textApellido;
 private JLabel nombres;
 private JTextField textNombre;
 private JLabel fechaNacimiento1;
-
-private JTextField textNacimiento;
 private JLabel co1;
 private JLabel co3;
 private JTextField textNroDNI;
@@ -89,7 +90,7 @@ private JLabel co8_5;
 private JButton btnSiguiente;
 private JLabel nombres_1;
 private JLabel nombres_2;
-private JLabel nombres_3;
+private JDateChooser dateChooser;
 
 public PanelAgregarPasajero() {
 	setBackground(SystemColor.controlHighlight);
@@ -99,10 +100,6 @@ public PanelAgregarPasajero() {
 	gridBagLayout.rowHeights = new int[]{36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 24, 0, 9, 0, 0, 0, 0, 30, 0, 0, 0, 8, 0};
 	gridBagLayout.columnWidths = new int[]{127, 250, 104, 250, 0};
 	
-	//gridBagLayout.columnWidths = new int[]{0, 200, 0, 200, 0};
-	//gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 1, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0};
-	gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 	setLayout(gridBagLayout);
 	
 	apellido = new JLabel("Apellido(*):");
@@ -124,24 +121,15 @@ public PanelAgregarPasajero() {
 	add(textApellido, gbc_textApellido);
 	textApellido.setColumns(10);
 	
-	/*fechaNacimiento1 = new JLabel("Fecha Nacimiento(*):");
-	fechaNacimiento1.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
-	GridBagConstraints gbcNacimiento = new GridBagConstraints();
-	gbcNacimiento.insets = new Insets(10, 0, 5, 5);
-	gbcNacimiento.anchor = GridBagConstraints.EAST;
-	gbcNacimiento.gridx = 2;
-	gbcNacimiento.gridy = 0;
-	add(fechaNacimiento1, gbcNacimiento);*/
-	
-
-	textNacimiento = new JTextField();
-	textNacimiento.setColumns(10);
-	GridBagConstraints gbc_textNacimiento1 = new GridBagConstraints();
-	gbc_textNacimiento1.insets = new Insets(10, 0, 5, 10);
-	gbc_textNacimiento1.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textNacimiento1.gridx = 3;
-	gbc_textNacimiento1.gridy = 0;
-	add(textNacimiento, gbc_textNacimiento1);
+	dateChooser = new JDateChooser();
+	dateChooser.getCalendarButton().setBackground(Color.WHITE);
+	GridBagConstraints gbc_dateChooser = new GridBagConstraints();
+	gbc_dateChooser.fill = GridBagConstraints.HORIZONTAL;
+	gbc_dateChooser.insets = new Insets(0, 0, 5, 10);
+	gbc_dateChooser.gridx = 3;
+	gbc_dateChooser.gridy = 0;
+	dateChooser.setBackground(SystemColor.controlHighlight);
+	add(dateChooser, gbc_dateChooser);
 	
 	co1 = new JLabel("Campo obligatorio");
 	co1.setForeground(Color.RED);
@@ -366,15 +354,6 @@ public PanelAgregarPasajero() {
 	gbc_co8.gridx = 3;
 	gbc_co8.gridy = 9;
 	add(co8, gbc_co8);
-	
-	nombres_3 = new JLabel("Posici\u00F3n IVA(*):");
-	nombres_3.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
-	GridBagConstraints gbc_nombres_3 = new GridBagConstraints();
-	gbc_nombres_3.insets = new Insets(0, 0, 5, 5);
-	gbc_nombres_3.anchor = GridBagConstraints.EAST;
-	gbc_nombres_3.gridx = 0;
-	gbc_nombres_3.gridy = 10;
-	add(nombres_3, gbc_nombres_3);
 	
 	comboIVA = new JComboBox();
 	GridBagConstraints gbc_comboIVA = new GridBagConstraints();

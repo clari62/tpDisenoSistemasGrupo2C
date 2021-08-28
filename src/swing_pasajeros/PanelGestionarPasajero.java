@@ -29,6 +29,8 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
+
+
 import java.awt.SystemColor;
 import java.awt.Button;
 import java.awt.Component;
@@ -52,28 +54,29 @@ public class PanelGestionarPasajero extends JPanel {
 	private Object datosFila[][];
 
 
+@SuppressWarnings("serial")
 public PanelGestionarPasajero() {
 	setBackground(SystemColor.controlHighlight);
 	this.setSize(new Dimension(800,600));
 	GridBagLayout gridBagLayout = new GridBagLayout();
-	//gridBagLayout.columnWidths = new int[]{0, 277, 280, 0};
-	gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0};
-	gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, Double.MIN_VALUE};
+//	gridBagLayout.rowHeights = new int[]{151, 0};
+//	gridBagLayout.columnWeights = new double[]{1.0, 0.0};
+	gridBagLayout.rowWeights = new double[]{0.0, 1.0};
+	gridBagLayout.columnWidths = new int[]{36, 244};
+	
 	setLayout(gridBagLayout);
 	
 	JPanel panel = new JPanel();
 	panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 	GridBagConstraints gbc_panel = new GridBagConstraints();
-	gbc_panel.gridheight = 7;
 	gbc_panel.gridwidth = 2;
-	gbc_panel.insets = new Insets(10, 0, 5, 0);
-	gbc_panel.fill = GridBagConstraints.VERTICAL;
-	gbc_panel.gridx = 1;
-	gbc_panel.gridy = 1;
+	gbc_panel.insets = new Insets(5, 10, 5, 10);
+	gbc_panel.fill = GridBagConstraints.BOTH;
+	gbc_panel.gridx = 0;
+	gbc_panel.gridy = 0;
 	add(panel, gbc_panel);
 	GridBagLayout gbl_panel = new GridBagLayout();
-	gbl_panel.columnWidths = new int[]{0, 156, 269, 0};
+	gbl_panel.columnWidths = new int[]{0, 254, 360, 0};
 	gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
 	gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 	gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
@@ -163,7 +166,7 @@ public PanelGestionarPasajero() {
 	gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
 	gbc_btnNewButton.anchor = GridBagConstraints.EAST;
 	gbc_btnNewButton.gridx = 1;
-	gbc_btnNewButton.gridy = 5;
+	gbc_btnNewButton.gridy = 4;
 	panel.add(btnNewButton, gbc_btnNewButton);
 	
 	JButton btnCancelar = new JButton("CANCELAR");
@@ -173,18 +176,18 @@ public PanelGestionarPasajero() {
 	gbc_btnCancelar.insets = new Insets(0, 5, 5, 0);
 	gbc_btnCancelar.anchor = GridBagConstraints.WEST;
 	gbc_btnCancelar.gridx = 2;
-	gbc_btnCancelar.gridy = 5;
+	gbc_btnCancelar.gridy = 4;
 	panel.add(btnCancelar, gbc_btnCancelar);
 	
 	
 	JPanel panel_1 = new JPanel();
 	panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 	GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-	gbc_panel_1.insets = new Insets(0, 0, 5, 0);
+	gbc_panel_1.insets = new Insets(5, 10, 5, 10);
 	gbc_panel_1.gridwidth = 2;
 	gbc_panel_1.fill = GridBagConstraints.BOTH;
-	gbc_panel_1.gridx = 1;
-	gbc_panel_1.gridy = 8;
+	gbc_panel_1.gridx = 0;
+	gbc_panel_1.gridy = 1;
 	add(panel_1, gbc_panel_1);
 	GridBagLayout gbl_panel_1 = new GridBagLayout();
 	gbl_panel_1.columnWidths = new int[]{0, 0, 100, 0, 0, 0, 0, 0, 65, 0, 0, 0, 0, 0, 0};
@@ -195,43 +198,41 @@ public PanelGestionarPasajero() {
 
 	table = new JTable();
 	table.setSurrendersFocusOnKeystroke(true);
-	table.setRowSelectionAllowed(false);
 	table.setBackground(Color.WHITE);
-	table.setEnabled(false);
 	table.setFont(new Font("Leelawadee UI", Font.PLAIN, 11));
-
-	//model = renovarTabla();
-	table.setModel(new DefaultTableModel(
-		new Object[][] {
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-			{null, null, null, null, null},
-		},
-		new String[] {
+	
+	Object[][] datos = new Object[][] {
+		{"Clarisa", "Espertino", "DNI", "42530390", null}		
+	};
+	
+	String[] nombresColumnas = new String[] {
 			"Apellido", "Nombres", "Tipo Documento", "Nro. Documento", "Modificar"
+		};
+	
+	table.setModel(new DefaultTableModel(
+		datos,nombresColumnas) {
+		Class[] columnTypes = new Class[] {
+			String.class, String.class, String.class, String.class, Boolean.class
+		};
+		public Class getColumnClass(int columnIndex) {
+			return columnTypes[columnIndex];
 		}
-	));
+		boolean[] columnEditables = new boolean[] {
+			false, false, false, false, true
+		};
+		public boolean isCellEditable(int row, int column) {
+			return columnEditables[column];
+		}
+	});
 
-	table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-//	autoajustarAnchoColumnas(table);
+//table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+	autoajustarAnchoColumnas(table);
 	table.setBorder(new LineBorder(new Color(0, 0, 0)));
 	GridBagConstraints gbc_table = new GridBagConstraints();
 	gbc_table.gridwidth = 16;
 
 	JScrollPane scrollPane = new JScrollPane(table);
-	gbc_table.insets = new Insets(5, 5, 5, 0);
+	gbc_table.insets = new Insets(5, 5, 5, 5);
 	gbc_table.fill = GridBagConstraints.BOTH;
 	gbc_table.gridx = 1;
 	gbc_table.gridy = 0;
@@ -239,12 +240,14 @@ public PanelGestionarPasajero() {
 	panel_1.add(scrollPane, gbc_table);
 	
 	ImageIcon flechaDerecha = new ImageIcon(new ImageIcon("./images/flechaNavegacionDerecha.png")
-			.getImage().getScaledInstance(15, 15, Image.SCALE_DEFAULT));
+			.getImage().getScaledInstance(15, 15, Image.SCALE_SMOOTH));
 		
 	ImageIcon flechaIzquierda = new ImageIcon(new ImageIcon("./images/flechaNavegacionIzquierda.png")
-			.getImage().getScaledInstance(15, 15, Image.SCALE_DEFAULT));
+			.getImage().getScaledInstance(15, 15, Image.SCALE_SMOOTH));
 	
 	JLabel lblNewLabel_1 = new JLabel("Pagina");
+	lblNewLabel_1.setFont(new Font("Leelawadee UI", Font.BOLD, 12));
+
 	GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
 	gbc_lblNewLabel_1.insets = new Insets(0, 0, 5, 5);
 	gbc_lblNewLabel_1.gridx = 3;
@@ -281,7 +284,6 @@ public PanelGestionarPasajero() {
 	gbc_btnSiguiente.gridy = 4;
 	panel_1.add(btnSiguiente, gbc_btnSiguiente);
 	
-	
 }
 
 
@@ -294,24 +296,21 @@ public void setModel(DefaultTableModel model) {
 	table_1.setModel(model);
 }
 
-public DefaultTableModel renovarTabla() {
+/*public DefaultTableModel renovarTabla() {
 	String nombreColumnas[] = { "Apellido", "Nombres", "Tipo Documento", "Nro. Documento"};
 	datosFila = new Object[2][4];
 	//for (int i = 0; i < nuevosDatos.size(); i++) {
-	/*	datosFila[0][0] = "Espertino";
+		datosFila[0][0] = "Espertino";
 		datosFila[0][1] = "Clarisa";
 		datosFila[0][2] = "DNI";
 		datosFila[0][3] = "42530390";
 		datosFila[1][0] = "Espertino";
 		datosFila[1][1] = "Clarisa";
 		datosFila[1][2] = "DNI";
-		datosFila[1][3] = "42530390";*/
+		datosFila[1][3] = "42530390";
 	//}
 	// Crear modelo de la tabla
 	model = new DefaultTableModel(datosFila, nombreColumnas) {
-		/**
-		 * 
-		 */
 		private static final long serialVersionUID = 1L;
 
 		public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -319,9 +318,10 @@ public DefaultTableModel renovarTabla() {
 		}
 	};
 	return model;
-}
+}*/
 
-/*public void autoajustarAnchoColumnas(JTable table) {
+public void autoajustarAnchoColumnas(JTable table) {
+	final TableColumnModel columnModel = table.getColumnModel();
 	for (int column = 0; column < table.getColumnCount(); column++) {
 		int width = 15; // Min width
 		for (int row = 0; row < table.getRowCount(); row++) {
@@ -333,5 +333,5 @@ public DefaultTableModel renovarTabla() {
 			width = 300;
 		columnModel.getColumn(column).setPreferredWidth(width);
 	}
-}*/
+}
 }

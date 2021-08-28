@@ -28,10 +28,13 @@ public class PanelPrincipal extends JPanel{
 		//setBackground(Color.white);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 
+
 		//gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
 		//gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 	/*	gridBagLayout.columnWidths = new int[]{120, 120, 120, 120, 120,120,100};
+		//gridBagLayout.columnWidths = new int[]{120, 120, 120, 120, 120,120,100};
+
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
