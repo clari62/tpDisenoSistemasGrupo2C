@@ -25,8 +25,8 @@ public class framePrincipal {
 			//ventana.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
 			PanelPrincipal panelPrincipal = new PanelPrincipal();
-
-		ventana.setContentPane(panelPrincipal);
+			ventana.setSize(new Dimension(800,600));
+			ventana.setContentPane(panelPrincipal);
 			ventana.setBackground(Color.GRAY);
 
 
@@ -38,9 +38,6 @@ public class framePrincipal {
 			ventana.pack();
 			ventana.setLocationRelativeTo(null);
 
-			//ventana.setContentPane(panelPrincipal);
-			ventana.setSize(new Dimension(800,600));
-					
 			panelAgregarPasajero = new PanelAgregarPasajero();
 		//	panelGestionarPasajero = new PanelGestionarPasajero();
 			//ventana.setContentPane(panelGestionarPasajero);
