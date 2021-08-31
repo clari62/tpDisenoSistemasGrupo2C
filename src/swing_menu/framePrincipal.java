@@ -8,6 +8,7 @@ import java.awt.SystemColor;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
+import swing_ingresos.PanelListarIngresos;
 import swing_pasajeros.PanelAgregarPasajero;
 import swing_pasajeros.PanelGestionarPasajero;
 import swing_reservas.PanelReservarHabitacion2;
@@ -29,10 +30,11 @@ public class framePrincipal {
 			ventana.setSize(new Dimension(800,600));
 			
 			PanelReservarHabitacion2 panelReservarHabitacion2 = new PanelReservarHabitacion2();
+			PanelListarIngresos panelListarIngresos = new PanelListarIngresos();
 			
 			panelAgregarPasajero = new PanelAgregarPasajero();
 			panelGestionarPasajero = new PanelGestionarPasajero();
-			ventana.setContentPane(panelReservarHabitacion2);
+			ventana.setContentPane(panelListarIngresos);
 			//ventana.pack();
 			ventana.setLocationRelativeTo(null); 
 			ventana.setVisible(true);
