@@ -14,6 +14,7 @@ import swing_pasajeros.PanelAgregarPasajero;
 //import swing_pasajeros.PanelGestionarPasajero;
 
 import swing_pasajeros.PanelGestionarPasajero;
+import swing_reservas.PanelReservarHabitacion2;
 //import swing_reservas.PanelReservarHabitacion2;
 
 
@@ -46,30 +47,28 @@ public class framePrincipal {
 			//gridBagLayout.columnWeights = new double[] { 1.0 };
 			
 		//	ventana.setContentPane(panelAgregarPasajero);
-			ventana.pack();
+
 			ventana.setLocationRelativeTo(null);
 
 			panelAgregarPasajero = new PanelAgregarPasajero();
 		//	panelGestionarPasajero = new PanelGestionarPasajero();
 			//ventana.setContentPane(panelGestionarPasajero);
 
-			
-<<<<<<< HEAD
+
 			PanelReservarHabitacion2 panelReservarHabitacion2 = new PanelReservarHabitacion2();
 			PanelListarIngresos panelListarIngresos = new PanelListarIngresos();
 			
 			panelAgregarPasajero = new PanelAgregarPasajero();
 			panelGestionarPasajero = new PanelGestionarPasajero();
-			ventana.setContentPane(panelListarIngresos);
+			//ventana.setContentPane(panelListarIngresos);
 			//ventana.pack();
 			ventana.setLocationRelativeTo(null); 
-=======
+
 			//PanelReservarHabitacion2 panelReservarHabitacion2 = new PanelReservarHabitacion2();
 			
 			panelAgregarPasajero = new PanelAgregarPasajero();
 			panelGestionarPasajero = new PanelGestionarPasajero();
-		//	ventana.setContentPane(panelReservarHabitacion2);
->>>>>>> 186cd04ab94740d937628215eb7f15e3ec2d1554
+			ventana.setContentPane(panelListarIngresos);
 			ventana.setVisible(true);
 
 	}
