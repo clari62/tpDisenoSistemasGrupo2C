@@ -112,6 +112,7 @@ public PanelAgregarPasajero() {
 	add(apellido, gbc_apellido);
 	
 	textApellido = new JTextField();
+
 	GridBagConstraints gbc_textApellido = new GridBagConstraints();
 	gbc_textApellido.insets = new Insets(10, 0, 5, 5);
 	gbc_textApellido.fill = GridBagConstraints.HORIZONTAL;
