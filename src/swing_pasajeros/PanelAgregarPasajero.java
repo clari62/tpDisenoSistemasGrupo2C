@@ -32,18 +32,18 @@ import java.awt.GridLayout;
 import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
+
 public class PanelAgregarPasajero extends JPanel {
 	
 private JLabel apellido;
 private JTextField textApellido;
 private JLabel nombres;
 private JTextField textNombre;
-private JLabel fechaNacimiento;
-private JTextField textNacimiento;
+private JLabel fechaNacimiento1;
 private JLabel co1;
 private JLabel co3;
-private JLabel tipoDocumento;
-private JLabel nroDNI;
 private JTextField textNroDNI;
 private JComboBox comboTipoDNI;
 private JLabel co5;
@@ -63,7 +63,6 @@ private JTextField textField_7;
 private JTextField textNacionalidad;
 private JLabel co7;
 private JLabel co8;
-private JLabel posicionIVA;
 private JLabel pais;
 private JComboBox comboPais;
 private JLabel localidad;
@@ -75,7 +74,6 @@ private JLabel codigoPostal;
 private JLabel provincia;
 private JComboBox comboProvincia;
 private JTextField textCodigoPostal;
-private JButton btnSiguiente;
 private JButton btnCancelar;
 private JPanel panel;
 private JLabel calle_1;
@@ -88,18 +86,20 @@ private JTextField textField_2;
 private JLabel co8_2;
 private JLabel co8_3;
 private JLabel co8_4;
+private JLabel co8_5;
+private JButton btnSiguiente;
+private JLabel nombres_1;
+private JLabel nombres_2;
+private JDateChooser dateChooser;
 
 public PanelAgregarPasajero() {
 	setBackground(SystemColor.controlHighlight);
 	this.setSize(new Dimension(800,600));
 	GridBagLayout gridBagLayout = new GridBagLayout();
+
 	gridBagLayout.rowHeights = new int[]{36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 24, 0, 9, 0, 0, 0, 0, 30, 0, 0, 0, 8, 0};
-	gridBagLayout.columnWidths = new int[]{0, 0, 127, 0, 263, 0, 182, 73, 0, 0, 0};
+	gridBagLayout.columnWidths = new int[]{127, 250, 104, 250, 0};
 	
-	//gridBagLayout.columnWidths = new int[]{0, 200, 0, 200, 0};
-	//gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 21, 1, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-	gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 	setLayout(gridBagLayout);
 	
 	apellido = new JLabel("Apellido(*):");
@@ -107,48 +107,37 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_apellido = new GridBagConstraints();
 	gbc_apellido.insets = new Insets(10, 0, 5, 5);
 	gbc_apellido.anchor = GridBagConstraints.EAST;
-	gbc_apellido.gridx = 2;
+	gbc_apellido.gridx = 0;
 	gbc_apellido.gridy = 0;
 	add(apellido, gbc_apellido);
 	
 	textApellido = new JTextField();
+
 	GridBagConstraints gbc_textApellido = new GridBagConstraints();
-	gbc_textApellido.gridwidth = 2;
 	gbc_textApellido.insets = new Insets(10, 0, 5, 5);
 	gbc_textApellido.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textApellido.gridx = 3;
+	gbc_textApellido.gridx = 1;
 	gbc_textApellido.gridy = 0;
 	add(textApellido, gbc_textApellido);
 	textApellido.setColumns(10);
 	
-	fechaNacimiento = new JLabel("<html><center><body>Fecha de </br> nacimiento(*):</body></center></html>");
-	fechaNacimiento.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
-	GridBagConstraints gbc_fechaNacimiento = new GridBagConstraints();
-	gbc_fechaNacimiento.fill = GridBagConstraints.VERTICAL;
-	gbc_fechaNacimiento.anchor = GridBagConstraints.EAST;
-	gbc_fechaNacimiento.insets = new Insets(10, 0, 5, 5);
-	gbc_fechaNacimiento.gridx = 5;
-	gbc_fechaNacimiento.gridy = 0;
-	add(fechaNacimiento, gbc_fechaNacimiento);
-	
-	textNacimiento = new JTextField();
-	textNacimiento.setColumns(10);
-	GridBagConstraints gbc_textNacimiento = new GridBagConstraints();
-	gbc_textNacimiento.gridwidth = 2;
-	gbc_textNacimiento.insets = new Insets(10, 0, 5, 10);
-	gbc_textNacimiento.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textNacimiento.gridx = 6;
-	gbc_textNacimiento.gridy = 0;
-	add(textNacimiento, gbc_textNacimiento);
+	dateChooser = new JDateChooser();
+	dateChooser.getCalendarButton().setBackground(Color.WHITE);
+	GridBagConstraints gbc_dateChooser = new GridBagConstraints();
+	gbc_dateChooser.fill = GridBagConstraints.HORIZONTAL;
+	gbc_dateChooser.insets = new Insets(0, 0, 5, 10);
+	gbc_dateChooser.gridx = 3;
+	gbc_dateChooser.gridy = 0;
+	dateChooser.setBackground(SystemColor.controlHighlight);
+	add(dateChooser, gbc_dateChooser);
 	
 	co1 = new JLabel("Campo obligatorio");
 	co1.setForeground(Color.RED);
 	co1.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co1 = new GridBagConstraints();
-	gbc_co1.gridwidth = 2;
 	gbc_co1.anchor = GridBagConstraints.WEST;
 	gbc_co1.insets = new Insets(0, 0, 5, 5);
-	gbc_co1.gridx = 3;
+	gbc_co1.gridx = 1;
 	gbc_co1.gridy = 1;
 	add(co1, gbc_co1);
 	
@@ -156,10 +145,9 @@ public PanelAgregarPasajero() {
 	co2.setForeground(Color.RED);
 	co2.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co2 = new GridBagConstraints();
-	gbc_co2.gridwidth = 2;
 	gbc_co2.anchor = GridBagConstraints.WEST;
 	gbc_co2.insets = new Insets(0, 0, 5, 5);
-	gbc_co2.gridx = 6;
+	gbc_co2.gridx = 3;
 	gbc_co2.gridy = 1;
 	add(co2, gbc_co2);
 	
@@ -168,17 +156,16 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_nombres = new GridBagConstraints();
 	gbc_nombres.anchor = GridBagConstraints.EAST;
 	gbc_nombres.insets = new Insets(0, 0, 5, 5);
-	gbc_nombres.gridx = 2;
+	gbc_nombres.gridx = 0;
 	gbc_nombres.gridy = 2;
 	add(nombres, gbc_nombres);
 	
 	textNombre = new JTextField();
 	textNombre.setColumns(10);
 	GridBagConstraints gbc_textNombre = new GridBagConstraints();
-	gbc_textNombre.gridwidth = 2;
 	gbc_textNombre.insets = new Insets(0, 0, 5, 5);
 	gbc_textNombre.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textNombre.gridx = 3;
+	gbc_textNombre.gridx = 1;
 	gbc_textNombre.gridy = 2;
 	add(textNombre, gbc_textNombre);
 	
@@ -187,17 +174,16 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_telefono = new GridBagConstraints();
 	gbc_telefono.anchor = GridBagConstraints.EAST;
 	gbc_telefono.insets = new Insets(0, 0, 5, 5);
-	gbc_telefono.gridx = 5;
+	gbc_telefono.gridx = 2;
 	gbc_telefono.gridy = 2;
 	add(telefono, gbc_telefono);
 	
 	textTelefono = new JTextField();
 	textTelefono.setColumns(10);
 	GridBagConstraints gbc_textTelefono = new GridBagConstraints();
-	gbc_textTelefono.gridwidth = 2;
 	gbc_textTelefono.insets = new Insets(0, 0, 5, 10);
 	gbc_textTelefono.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textTelefono.gridx = 6;
+	gbc_textTelefono.gridx = 3;
 	gbc_textTelefono.gridy = 2;
 	add(textTelefono, gbc_textTelefono);
 	
@@ -205,10 +191,9 @@ public PanelAgregarPasajero() {
 	co3.setForeground(Color.RED);
 	co3.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co3 = new GridBagConstraints();
-	gbc_co3.gridwidth = 2;
 	gbc_co3.anchor = GridBagConstraints.WEST;
 	gbc_co3.insets = new Insets(0, 0, 5, 5);
-	gbc_co3.gridx = 3;
+	gbc_co3.gridx = 1;
 	gbc_co3.gridy = 3;
 	add(co3, gbc_co3);
 	
@@ -218,26 +203,24 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_co4 = new GridBagConstraints();
 	gbc_co4.anchor = GridBagConstraints.WEST;
 	gbc_co4.insets = new Insets(0, 0, 5, 5);
-	gbc_co4.gridx = 6;
+	gbc_co4.gridx = 3;
 	gbc_co4.gridy = 3;
 	add(co4, gbc_co4);
 	
-	//JButton btnGestionarResponsable = new JButton("<html><body><center> GESTIONAR RESPONSABLE</br> DE PAGO</body></center></html>");
-	tipoDocumento = new JLabel("<html><body><center>Tipo de </br>Documento(*):</body></center></html>");
-	tipoDocumento.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
-	GridBagConstraints gbc_tipoDocumento = new GridBagConstraints();
-	gbc_tipoDocumento.anchor = GridBagConstraints.EAST;
-	gbc_tipoDocumento.insets = new Insets(0, 0, 5, 5);
-	gbc_tipoDocumento.gridx = 2;
-	gbc_tipoDocumento.gridy = 4;
-	add(tipoDocumento, gbc_tipoDocumento);
+	/*nombres_1 = new JLabel("Tipo Documento(*):");
+	nombres_1.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
+	GridBagConstraints gbc_nombres_1 = new GridBagConstraints();
+	gbc_nombres_1.insets = new Insets(0, 0, 5, 5);
+	gbc_nombres_1.anchor = GridBagConstraints.EAST;
+	gbc_nombres_1.gridx = 0;
+	gbc_nombres_1.gridy = 4;
+	add(nombres_1, gbc_nombres_1);*/
 	
 	comboTipoDNI = new JComboBox();
 	GridBagConstraints gbc_comboTipoDNI = new GridBagConstraints();
-	gbc_comboTipoDNI.gridwidth = 2;
 	gbc_comboTipoDNI.insets = new Insets(0, 0, 5, 5);
 	gbc_comboTipoDNI.fill = GridBagConstraints.HORIZONTAL;
-	gbc_comboTipoDNI.gridx = 3;
+	gbc_comboTipoDNI.gridx = 1;
 	gbc_comboTipoDNI.gridy = 4;
 	add(comboTipoDNI, gbc_comboTipoDNI);
 	
@@ -246,17 +229,16 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_email = new GridBagConstraints();
 	gbc_email.anchor = GridBagConstraints.EAST;
 	gbc_email.insets = new Insets(0, 0, 5, 5);
-	gbc_email.gridx = 5;
+	gbc_email.gridx = 2;
 	gbc_email.gridy = 4;
 	add(email, gbc_email);
 	
 	textEmail = new JTextField();
 	textEmail.setColumns(10);
 	GridBagConstraints gbc_textEmail = new GridBagConstraints();
-	gbc_textEmail.gridwidth = 2;
 	gbc_textEmail.insets = new Insets(0, 0, 5, 10);
 	gbc_textEmail.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textEmail.gridx = 6;
+	gbc_textEmail.gridx = 3;
 	gbc_textEmail.gridy = 4;
 	add(textEmail, gbc_textEmail);
 	
@@ -264,29 +246,28 @@ public PanelAgregarPasajero() {
 	co5.setForeground(Color.RED);
 	co5.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co5 = new GridBagConstraints();
-	gbc_co5.gridwidth = 2;
 	gbc_co5.anchor = GridBagConstraints.WEST;
 	gbc_co5.insets = new Insets(0, 0, 5, 5);
-	gbc_co5.gridx = 3;
+	gbc_co5.gridx = 1;
 	gbc_co5.gridy = 5;
 	add(co5, gbc_co5);
 	
-	nroDNI = new JLabel("<html><body><center> Número </br> </br> de Documento(*): </body></center></html");
-	nroDNI.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
-	GridBagConstraints gbc_nroDNI = new GridBagConstraints();
-	gbc_nroDNI.anchor = GridBagConstraints.EAST;
-	gbc_nroDNI.insets = new Insets(0, 0, 5, 5);
-	gbc_nroDNI.gridx = 2;
-	gbc_nroDNI.gridy = 6;
-	add(nroDNI, gbc_nroDNI);
+	
+	/*nombres_2 = new JLabel("Nro. de Documento(*):");
+	nombres_2.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
+	GridBagConstraints gbc_nombres_2 = new GridBagConstraints();
+	gbc_nombres_2.anchor = GridBagConstraints.EAST;
+	gbc_nombres_2.insets = new Insets(0, 0, 5, 5);
+	gbc_nombres_2.gridx = 0;
+	gbc_nombres_2.gridy = 6;
+	add(nombres_2, gbc_nombres_2);*/
 	
 	textNroDNI = new JTextField();
 	textNroDNI.setColumns(10);
 	GridBagConstraints gbc_textNroDNI = new GridBagConstraints();
-	gbc_textNroDNI.gridwidth = 2;
 	gbc_textNroDNI.insets = new Insets(0, 0, 5, 5);
 	gbc_textNroDNI.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textNroDNI.gridx = 3;
+	gbc_textNroDNI.gridx = 1;
 	gbc_textNroDNI.gridy = 6;
 	add(textNroDNI, gbc_textNroDNI);
 	
@@ -295,17 +276,16 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_ocupacion = new GridBagConstraints();
 	gbc_ocupacion.anchor = GridBagConstraints.EAST;
 	gbc_ocupacion.insets = new Insets(0, 0, 5, 5);
-	gbc_ocupacion.gridx = 5;
+	gbc_ocupacion.gridx = 2;
 	gbc_ocupacion.gridy = 6;
 	add(ocupacion, gbc_ocupacion);
 	
 	textField_7 = new JTextField();
 	textField_7.setColumns(10);
 	GridBagConstraints gbc_textField_7 = new GridBagConstraints();
-	gbc_textField_7.gridwidth = 2;
 	gbc_textField_7.insets = new Insets(0, 0, 5, 10);
 	gbc_textField_7.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textField_7.gridx = 6;
+	gbc_textField_7.gridx = 3;
 	gbc_textField_7.gridy = 6;
 	add(textField_7, gbc_textField_7);
 	
@@ -313,10 +293,9 @@ public PanelAgregarPasajero() {
 	co6.setForeground(Color.RED);
 	co6.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co6 = new GridBagConstraints();
-	gbc_co6.gridwidth = 2;
 	gbc_co6.anchor = GridBagConstraints.WEST;
 	gbc_co6.insets = new Insets(0, 0, 5, 5);
-	gbc_co6.gridx = 3;
+	gbc_co6.gridx = 1;
 	gbc_co6.gridy = 7;
 	add(co6, gbc_co6);
 	
@@ -324,10 +303,9 @@ public PanelAgregarPasajero() {
 	co7.setForeground(Color.RED);
 	co7.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co7 = new GridBagConstraints();
-	gbc_co7.gridwidth = 2;
 	gbc_co7.anchor = GridBagConstraints.WEST;
 	gbc_co7.insets = new Insets(0, 0, 5, 5);
-	gbc_co7.gridx = 6;
+	gbc_co7.gridx = 3;
 	gbc_co7.gridy = 7;
 	add(co7, gbc_co7);
 	
@@ -336,17 +314,16 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_cuit = new GridBagConstraints();
 	gbc_cuit.anchor = GridBagConstraints.EAST;
 	gbc_cuit.insets = new Insets(0, 0, 5, 5);
-	gbc_cuit.gridx = 2;
+	gbc_cuit.gridx = 0;
 	gbc_cuit.gridy = 8;
 	add(cuit, gbc_cuit);
 	
 	textCUIT = new JTextField();
 	textCUIT.setColumns(10);
 	GridBagConstraints gbc_textCUIT = new GridBagConstraints();
-	gbc_textCUIT.gridwidth = 2;
 	gbc_textCUIT.insets = new Insets(0, 0, 5, 5);
 	gbc_textCUIT.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textCUIT.gridx = 3;
+	gbc_textCUIT.gridx = 1;
 	gbc_textCUIT.gridy = 8;
 	add(textCUIT, gbc_textCUIT);
 	
@@ -355,17 +332,16 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_nacionalidad = new GridBagConstraints();
 	gbc_nacionalidad.anchor = GridBagConstraints.EAST;
 	gbc_nacionalidad.insets = new Insets(0, 0, 5, 5);
-	gbc_nacionalidad.gridx = 5;
+	gbc_nacionalidad.gridx = 2;
 	gbc_nacionalidad.gridy = 8;
 	add(nacionalidad, gbc_nacionalidad);
 	
 	textNacionalidad = new JTextField();
 	textNacionalidad.setColumns(10);
 	GridBagConstraints gbc_textNacionalidad = new GridBagConstraints();
-	gbc_textNacionalidad.gridwidth = 2;
 	gbc_textNacionalidad.insets = new Insets(0, 0, 5, 10);
 	gbc_textNacionalidad.fill = GridBagConstraints.HORIZONTAL;
-	gbc_textNacionalidad.gridx = 6;
+	gbc_textNacionalidad.gridx = 3;
 	gbc_textNacionalidad.gridy = 8;
 	add(textNacionalidad, gbc_textNacionalidad);
 	
@@ -373,29 +349,17 @@ public PanelAgregarPasajero() {
 	co8.setForeground(Color.RED);
 	co8.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co8 = new GridBagConstraints();
-	gbc_co8.gridwidth = 2;
 	gbc_co8.anchor = GridBagConstraints.WEST;
 	gbc_co8.insets = new Insets(0, 0, 5, 5);
-	gbc_co8.gridx = 6;
+	gbc_co8.gridx = 3;
 	gbc_co8.gridy = 9;
 	add(co8, gbc_co8);
 	
-	posicionIVA = new JLabel("<html><center><body>Posición</br> frente</br> al IVA:</body></html>");
-	posicionIVA.setHorizontalAlignment(SwingConstants.LEFT);
-	posicionIVA.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
-	GridBagConstraints gbc_posicionIVA = new GridBagConstraints();
-	gbc_posicionIVA.fill = GridBagConstraints.HORIZONTAL;
-	gbc_posicionIVA.insets = new Insets(0, 0, 5, 5);
-	gbc_posicionIVA.gridx = 2;
-	gbc_posicionIVA.gridy = 10;
-	add(posicionIVA, gbc_posicionIVA);
-	
 	comboIVA = new JComboBox();
 	GridBagConstraints gbc_comboIVA = new GridBagConstraints();
-	gbc_comboIVA.gridwidth = 2;
 	gbc_comboIVA.insets = new Insets(0, 0, 5, 5);
 	gbc_comboIVA.fill = GridBagConstraints.HORIZONTAL;
-	gbc_comboIVA.gridx = 3;
+	gbc_comboIVA.gridx = 1;
 	gbc_comboIVA.gridy = 10;
 	add(comboIVA, gbc_comboIVA);
 	
@@ -403,17 +367,17 @@ public PanelAgregarPasajero() {
 	panel.setBackground(SystemColor.controlHighlight);
 	panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
 	GridBagConstraints gbc_panel = new GridBagConstraints();
+	gbc_panel.fill = GridBagConstraints.VERTICAL;
+	gbc_panel.insets = new Insets(0, 0, 5, 0);
 	gbc_panel.gridheight = 7;
-	gbc_panel.gridwidth = 6;
-	gbc_panel.insets = new Insets(0, 0, 5, 5);
-	gbc_panel.fill = GridBagConstraints.HORIZONTAL;
-	gbc_panel.gridx = 2;
+	gbc_panel.gridwidth = 5;
+	gbc_panel.gridx = 0;
 	gbc_panel.gridy = 12;
 	add(panel, gbc_panel);
 	GridBagLayout gbl_panel = new GridBagLayout();
-	//gbl_panel.columnWidths = new int[]{128, 257, 118, 151, 100, 0};
+	gbl_panel.columnWidths = new int[]{118, 250, 101, 250, 0};
 	gbl_panel.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-	gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
+	gbl_panel.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 	gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 	panel.setLayout(gbl_panel);
 	
@@ -447,7 +411,6 @@ public PanelAgregarPasajero() {
 	textField_2 = new JTextField();
 	textField_2.setColumns(10);
 	GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-	gbc_textField_2.gridwidth = 2;
 	gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textField_2.insets = new Insets(10, 0, 5, 5);
 	gbc_textField_2.gridx = 3;
@@ -463,6 +426,16 @@ public PanelAgregarPasajero() {
 	gbc_co9_1.gridx = 1;
 	gbc_co9_1.gridy = 1;
 	panel.add(co9_1, gbc_co9_1);
+	
+	co8_5 = new JLabel("Campo obligatorio");
+	co8_5.setForeground(Color.RED);
+	co8_5.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
+	GridBagConstraints gbc_co8_5 = new GridBagConstraints();
+	gbc_co8_5.anchor = GridBagConstraints.WEST;
+	gbc_co8_5.insets = new Insets(0, 0, 5, 0);
+	gbc_co8_5.gridx = 3;
+	gbc_co8_5.gridy = 1;
+	panel.add(co8_5, gbc_co8_5);
 	
 	departamento_1 = new JLabel("Departamento:");
 	departamento_1.setFont(new Font("Leelawadee UI", Font.BOLD, 14));
@@ -493,7 +466,6 @@ public PanelAgregarPasajero() {
 	
 	textPiso = new JTextField();
 	GridBagConstraints gbc_textPiso = new GridBagConstraints();
-	gbc_textPiso.gridwidth = 2;
 	gbc_textPiso.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textPiso.insets = new Insets(0, 0, 5, 5);
 	gbc_textPiso.gridx = 3;
@@ -529,7 +501,6 @@ public PanelAgregarPasajero() {
 	
 	comboProvincia = new JComboBox();
 	GridBagConstraints gbc_comboProvincia = new GridBagConstraints();
-	gbc_comboProvincia.gridwidth = 2;
 	gbc_comboProvincia.fill = GridBagConstraints.HORIZONTAL;
 	gbc_comboProvincia.insets = new Insets(0, 0, 5, 5);
 	gbc_comboProvincia.gridx = 3;
@@ -550,9 +521,8 @@ public PanelAgregarPasajero() {
 	co8_2.setForeground(Color.RED);
 	co8_2.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co8_2 = new GridBagConstraints();
-	gbc_co8_2.gridwidth = 2;
 	gbc_co8_2.anchor = GridBagConstraints.WEST;
-	gbc_co8_2.insets = new Insets(0, 0, 5, 5);
+	gbc_co8_2.insets = new Insets(0, 0, 5, 0);
 	gbc_co8_2.gridx = 3;
 	gbc_co8_2.gridy = 4;
 	panel.add(co8_2, gbc_co8_2);
@@ -585,7 +555,6 @@ public PanelAgregarPasajero() {
 	
 	textCodigoPostal = new JTextField();
 	GridBagConstraints gbc_textCodigoPostal = new GridBagConstraints();
-	gbc_textCodigoPostal.gridwidth = 2;
 	gbc_textCodigoPostal.fill = GridBagConstraints.HORIZONTAL;
 	gbc_textCodigoPostal.insets = new Insets(0, 0, 5, 5);
 	gbc_textCodigoPostal.gridx = 3;
@@ -598,7 +567,7 @@ public PanelAgregarPasajero() {
 	co8_3.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co8_3 = new GridBagConstraints();
 	gbc_co8_3.anchor = GridBagConstraints.WEST;
-	gbc_co8_3.insets = new Insets(0, 0, 0, 5);
+	gbc_co8_3.insets = new Insets(0, 0, 5, 5);
 	gbc_co8_3.gridx = 1;
 	gbc_co8_3.gridy = 6;
 	panel.add(co8_3, gbc_co8_3);
@@ -607,20 +576,19 @@ public PanelAgregarPasajero() {
 	co8_4.setForeground(Color.RED);
 	co8_4.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 11));
 	GridBagConstraints gbc_co8_4 = new GridBagConstraints();
-	gbc_co8_4.gridwidth = 2;
+	gbc_co8_4.insets = new Insets(0, 0, 5, 0);
 	gbc_co8_4.anchor = GridBagConstraints.WEST;
-	gbc_co8_4.insets = new Insets(0, 0, 0, 5);
 	gbc_co8_4.gridx = 3;
 	gbc_co8_4.gridy = 6;
 	panel.add(co8_4, gbc_co8_4);
 	
 	btnSiguiente = new JButton("SIGUIENTE");
-	btnSiguiente.setBackground(Color.WHITE);
 	btnSiguiente.setFont(new Font("Leelawadee UI", Font.BOLD, 12));
+	btnSiguiente.setBackground(Color.WHITE);
 	GridBagConstraints gbc_btnSiguiente = new GridBagConstraints();
 	gbc_btnSiguiente.anchor = GridBagConstraints.EAST;
-	gbc_btnSiguiente.insets = new Insets(5, 0, 5, 5);
-	gbc_btnSiguiente.gridx = 4;
+	gbc_btnSiguiente.insets = new Insets(10, 0, 10, 5);
+	gbc_btnSiguiente.gridx = 1;
 	gbc_btnSiguiente.gridy = 19;
 	add(btnSiguiente, gbc_btnSiguiente);
 	
@@ -630,8 +598,8 @@ public PanelAgregarPasajero() {
 	GridBagConstraints gbc_btnCancelar = new GridBagConstraints();
 	gbc_btnCancelar.anchor = GridBagConstraints.WEST;
 	gbc_btnCancelar.gridwidth = 2;
-	gbc_btnCancelar.insets = new Insets(5, 0, 5, 5);
-	gbc_btnCancelar.gridx = 5;
+	gbc_btnCancelar.insets = new Insets(10, 0, 10, 5);
+	gbc_btnCancelar.gridx = 2;
 	gbc_btnCancelar.gridy = 19;
 	add(btnCancelar, gbc_btnCancelar);
 	
