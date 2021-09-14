@@ -21,7 +21,7 @@ public class PanelReservarHabitacion1 extends JPanel {
 
 	private JTable table;
 
-
+//Interfaz reservar Habitacion 1
 public PanelReservarHabitacion1() {
 	GridBagLayout gridBagLayout = new GridBagLayout();
 	gridBagLayout.columnWidths = new int[]{757};
