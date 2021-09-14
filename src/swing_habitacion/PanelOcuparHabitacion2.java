@@ -11,14 +11,11 @@ import javax.swing.border.LineBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import com.toedter.calendar.JDateChooser;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.SwingConstants;
-import javax.swing.Icon;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
