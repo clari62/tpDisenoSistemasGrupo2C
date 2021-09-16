@@ -310,7 +310,6 @@ public PanelReservarHabitacion2() {
 	
 }
 
-
 	public void limpiarWarnings(List<JLabel> labelAQuitar) {
 		for(int i =0;i<labelAQuitar.size();i++) {
 		labelAQuitar.get(i).setVisible(false);
