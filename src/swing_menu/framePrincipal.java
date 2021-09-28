@@ -55,7 +55,7 @@ public class framePrincipal {
 			ventana.setLocationRelativeTo(null);
 		//	panelGestionarPasajero = new PanelGestionarPasajero();
 
-		//ventana.setContentPane(panelGestionarPasajero);
+		 //ventana.setContentPane(panelReservarHabitacion1);
 			
 					
 		//PanelReservarHabitacion2 panelReservarHabitacion2 = new PanelReservarHabitacion2();
@@ -85,7 +85,7 @@ public class framePrincipal {
 			panelGestionarPasajero = new PanelGestionarPasajero();
 			panelReservarHabitacion1 = new PanelReservarHabitacion1();
 			panelOcuparHabitacion2 = new PanelOcuparHabitacion2();
-			ventana.setContentPane(panelOcuparHabitacion2);
+			ventana.setContentPane(panelReservarHabitacion1);
 
 			ventana.setVisible(true);
 
